@@ -1,0 +1,5 @@
+{
+    "ClientSite.Url.{env}": "ClientSite.Url"
+    "ManagementApiKey.{Env}": "Management.AccessToken",
+  
+}

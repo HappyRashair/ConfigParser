@@ -362,6 +362,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-config-input.json
-config-output.json
-web-config-dump.xml
+**/config-input.json
+**/config-result.json
+**/web-config-dump.xml

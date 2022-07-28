@@ -10,11 +10,17 @@ namespace ConfigParser
 {
     internal static class Extensions
     {
-        private static readonly List<string> _envs = "LOCAL,DEV,UAT,LIVE,PROD".Split(',').ToList();
+        private static readonly List<string> _envs = "LOCAL,DEV,UAT,TEST,LIVE,PROD".Split(',').ToList();
 
-        public static string? GetEnv(this string key)
+        public static bool HasEnv(this string key, out string? env)
         {
-            return _envs.FirstOrDefault(e => key.EndsWith(e, StringComparison.InvariantCultureIgnoreCase));
+            env = _envs.FirstOrDefault(e => key.EndsWith(e, StringComparison.InvariantCultureIgnoreCase));
+            return env != null;
+        }
+
+        public static bool IsInvalidEnv(this string env)
+        {
+            return "TEST".Equals(env, StringComparison.InvariantCultureIgnoreCase);
         }
 
         public static string StripEnv(this string key, string env)
@@ -34,7 +40,7 @@ namespace ConfigParser
     {
         public static readonly JsonSerializerOptions JsonSettings = new JsonSerializerOptions
         {
-           // Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            // Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
             WriteIndented = true,
         };
     }

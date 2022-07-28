@@ -10,6 +10,7 @@ Console.WriteLine("---------------------------------------------------------\n")
 Console.Write("Provide target env (DEV/UAT/LIVE): ");
 //var targetEnvInput = Console.ReadLine() ?? "";
 //var targetEnv = (targetEnvInput == "" ? "DEV" : targetEnvInput).ToUpper();
+Console.WriteLine("---");
 
 try
 {

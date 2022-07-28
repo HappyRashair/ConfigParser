@@ -20,33 +20,67 @@ namespace ConfigParser
             {
                 var key = entry.Key.Replace("_", ".");
                 var existsInWebConfig = webConfigEntries.ContainsKey(key);
-                if (existsInWebConfig)
+                if (!existsInWebConfig && key.HasEnv(out var env))
                 {
-                    var env = key.GetEnv();
-                    if (env == targetEnv)
-                    {
-                        key = key.StripEnv(targetEnv);
-                    }
-                    else if (env != null)
+                    if (env != targetEnv)
                     {
                         Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine($"{key} not found in web.config, skipping because of invalid env {env}");
+                        Console.WriteLine($"                 {key} not found in web.config, skipping because of invalid env {env}");
                         Console.ResetColor();
                         continue;
                     }
+
+                    existsInWebConfig = ProcessKeyWithEnv(webConfigEntries, entry, ref key, env);
                 }
 
-                existsInWebConfig = webConfigEntries.ContainsKey(key);
-                if (existsInWebConfig)
+                if (!existsInWebConfig)
                 {
-                    Console.WriteLine($"        {key} not found in web.config, will be kept");
                     notFound.Add((key, entry.Value));
                 }
 
-                result.Add(key, entry.Value);
+
+                Add(result, key, entry.Value);
             }
 
             File.WriteAllText(FilePath.ResultServerConfig, JsonSerializer.Serialize(result, options: Settings.JsonSettings));
+        }
+
+        private static bool ProcessKeyWithEnv(Dictionary<string, string> webConfigEntries, KeyValuePair<string, string> entry, ref string key,
+            string env)
+        {
+            key = key.StripEnv(env);
+            if (!webConfigEntries.ContainsKey(key))
+            {
+                Console.WriteLine($"        Stripped {key} not found in web.config, will be kept as {entry.Key}");
+                key = entry.Key;
+                return false;
+            }
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Stripped {key} found in web.config :+1, will be kept!");
+            Console.ResetColor();
+            return true;
+        }
+
+        public static void Add(Dictionary<string, string> result, string key, string value)
+        {
+            if (!result.TryGetValue(key, out var existingValue))
+            {
+                result.Add(key, value);
+                return;
+            }
+
+
+            var isExistingValueInvalid = existingValue.Contains("${");
+            if (isExistingValueInvalid)
+            {
+                result[key] = value;
+                return;
+            }
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine($"{key} was already added, skipping value: '{value}'");
+            Console.ResetColor();
         }
     }
 }

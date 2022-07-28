@@ -1,8 +1,9 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml;
 
@@ -14,7 +15,7 @@ namespace ConfigParser
         public static Dictionary<string, string> GetInputConfig()
         {
             string inputFile = File.ReadAllText(FilePath.InputServerConfig);
-            var input= JsonConvert.DeserializeObject<Dictionary<string, string>>(inputFile);
+            var input= JsonSerializer.Deserialize<Dictionary<string, string>>(inputFile);
             var result = new Dictionary<string, string>(InvariantStringComparer.Instance);
             foreach (var entry in input)
             {

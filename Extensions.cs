@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace ConfigParser
@@ -25,6 +27,15 @@ namespace ConfigParser
     {
         public const string WebConfig = @"Data\web-config-dump.xml";
         public const string InputServerConfig = @"Data\config-input.json";
-        public const string OutputServerConfig = @"Data\config-output.json";
+        public const string ResultServerConfig = @"Data\config-result.json";
+    }
+
+    internal static class Settings
+    {
+        public static readonly JsonSerializerOptions JsonSettings = new JsonSerializerOptions
+        {
+           // Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            WriteIndented = true,
+        };
     }
 }

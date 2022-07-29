@@ -47,5 +47,12 @@ namespace ConfigParser
 
             return result;
         }
+
+        public static HashSet<string> GetSettingsToRemove()
+        {
+            string inputFile = File.ReadAllText(FilePath.SettingsToRemove);
+            var input = JsonSerializer.Deserialize<List<string>>(inputFile);
+            return new HashSet<string>(input, InvariantStringComparer.Instance);
+        }
     }
 }

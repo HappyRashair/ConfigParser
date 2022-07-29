@@ -13,6 +13,7 @@ namespace ConfigParser
         {
             var webConfigEntries = ConfigManager.GetWebConfigValues();
             var existingSettings = ConfigManager.GetInputConfig();
+            var settingsToRemove = ConfigManager.GetSettingsToRemove();
 
             var result = new Dictionary<string, string>(InvariantStringComparer.Instance);
             var notFound = new List<(string, string)>();
@@ -24,9 +25,7 @@ namespace ConfigParser
                 {
                     if (env != targetEnv)
                     {
-                        Console.ForegroundColor = ConsoleColor.Cyan;
-                        Console.WriteLine($"                 {key} not found in web.config, skipping because of invalid env {env}");
-                        Console.ResetColor();
+                        CWrapper.WriteCyan($"{key} not found in web.config, skipping because of invalid env {env}");
                         continue;
                     }
 
@@ -36,8 +35,12 @@ namespace ConfigParser
                 if (!existsInWebConfig)
                 {
                     notFound.Add((key, entry.Value));
+                    if(settingsToRemove.Contains(key))
+                    {
+                        CWrapper.WriteRed($"{key} will be removed");
+                        continue;
+                    }
                 }
-
 
                 Add(result, key, entry.Value);
             }
@@ -51,14 +54,12 @@ namespace ConfigParser
             key = key.StripEnv(env);
             if (!webConfigEntries.ContainsKey(key))
             {
-                Console.WriteLine($"        Stripped {key} not found in web.config, will be kept as {entry.Key}");
+                CWrapper.WriteIndent($"Stripped {key} not found in web.config, will be kept as {entry.Key}");
                 key = entry.Key;
                 return false;
             }
 
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Stripped {key} found in web.config :+1, will be kept!");
-            Console.ResetColor();
+            CWrapper.WriteGreen($"Stripped {key} found in web.config :+1, will be kept!");
             return true;
         }
 
@@ -78,9 +79,7 @@ namespace ConfigParser
                 return;
             }
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine($"{key} was already added, skipping value: '{value}'");
-            Console.ResetColor();
+            CWrapper.WriteYellow($"{key} was already added, skipping value: '{value}'");
         }
     }
 }

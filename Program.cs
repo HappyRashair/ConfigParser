@@ -12,14 +12,19 @@ Console.Write("Provide target env (DEV/UAT/LIVE): ");
 //var targetEnv = (targetEnvInput == "" ? "DEV" : targetEnvInput).ToUpper();
 Console.WriteLine("---");
 
+Console.Write("Provide target app (WEB/API/MW/SS/DESKTOP): ");
+//var targetEnvInput = Console.ReadLine() ?? "";
+//var targetEnv = (targetEnvInput == "" ? "DEV" : targetEnvInput).ToUpper();
+Console.WriteLine("---");
+
+
+var configProcessor = new ConfigProcessor(verboseLogging: false);
 try
 {
-    ConfigProcessor.Run();
+    configProcessor.Run();
 }
-catch(Exception ex)
+catch (Exception ex)
 {
-    Console.ForegroundColor = ConsoleColor.Red;
-    Console.WriteLine(ex);
-    Console.ResetColor();
+    CWrapper.WriteRed(ex.ToString());
 }
 

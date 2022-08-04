@@ -35,6 +35,7 @@ namespace ConfigParser
         public const string InputServerConfig = @"Data\config-input.json";
         public const string ResultServerConfig = @"Data\config-result.json";
         public const string SettingsToRemove = @"Data\remove.json";
+        public const string Exclusions = @"Data\exclusions.json";
     }
 
     internal static class Settings

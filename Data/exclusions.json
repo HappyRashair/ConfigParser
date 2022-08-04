@@ -1,0 +1,8 @@
+{
+  "Amazon.DeveloperAccountNumber": "Web",
+  "Amazon.USDeveloperAccountNumber": "Web",
+  "Amazon.AUDeveloperAccountNumber": "Web",
+
+  "RoyalMail.MobileApp.ExternalGateway.AccessToken": "SS",
+  "EnterpriseReporting.PrivateKeyPassPhrase": "MW"
+}

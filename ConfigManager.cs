@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConfigParser.Data.Model;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -15,9 +16,9 @@ namespace ConfigParser
         public static Dictionary<string, string> GetInputConfig()
         {
             string inputFile = File.ReadAllText(FilePath.InputServerConfig);
-            var input= JsonSerializer.Deserialize<Dictionary<string, string>>(inputFile);
+            var input= JsonSerializer.Deserialize<InputConfig>(inputFile);
             var result = new Dictionary<string, string>(InvariantStringComparer.Instance);
-            foreach (var entry in input)
+            foreach (var entry in input.AllEntries)
             {
                 result.Add(entry.Key.Replace("_", "."), entry.Value);
             }
@@ -48,11 +49,18 @@ namespace ConfigParser
             return result;
         }
 
-        public static HashSet<string> GetSettingsToRemove()
+        public static List<string> GetSettingsToRemove()
         {
             string inputFile = File.ReadAllText(FilePath.SettingsToRemove);
-            var input = JsonSerializer.Deserialize<List<string>>(inputFile);
-            return new HashSet<string>(input, InvariantStringComparer.Instance);
+            var input = JsonSerializer.Deserialize<List<string>>(inputFile, new JsonSerializerOptions { AllowTrailingCommas = true });
+            return input;
+        }
+
+        public static Dictionary<string, string> GetExclusions()
+        {
+            string inputFile = File.ReadAllText(FilePath.Exclusions);
+            var input = JsonSerializer.Deserialize<Dictionary<string, string>>(inputFile, new JsonSerializerOptions { AllowTrailingCommas = true });
+            return input;
         }
     }
 }

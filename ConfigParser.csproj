@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <Content Include="Data\config-result.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\config-input.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

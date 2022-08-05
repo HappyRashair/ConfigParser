@@ -19,17 +19,31 @@
   "Amazon.DeveloperAccountNumber": [ "WEB" ],
   "Amazon.USDeveloperAccountNumber": [ "WEB" ],
   "Amazon.AUDeveloperAccountNumber": [ "WEB" ],
+  "Amazon.AccessToken": [ "MW", "API" ],
   "RoyalMail.MobileApp.ExternalGateway.AccessToken": [ "SS" ],
   "EnterpriseReporting.PrivateKeyPassPhrase": [ "MW" ],
   "ChannelShipper.StatusPage.Url": [ "CS" ],
   "Shipper.ZendeskApi.Url": [ "CS-API" ],
   "Sflite.ZendeskApi.Url": [ "CND-API" ],
   "ShipperAPI.Url": [ "SS" ],
-  "ConnectionStrings:Reporting": null,
+  "ConnectionStrings:Reporting": [ "SS" ],
+  "MiddlewareWebService.EndpointMode": [ "MW" ],
+
+  // Only used there
+  "BigCommerce.Url": [ "SS", "MW" ],
+  "BigCommerce.ExternalAuthUrl": [ "WEB" ],
+  "BigCommerce.InternalAuthPath": [ "WEB" ],
+  "BigCommerce.LIVE.AppClientID": [ "WEB" ],
+  "BigCommerce.LIVE.AppClientSecret": [ "WEB" ],
+
 
   // API verion would usually invoke changes in the code - it may be kept only in web.config
   "Ebay.Live.ApiVersion": null,
   "Ebay.Live.ShoppingApiVersion": null,
+  // Only used there
+  "Ebay.Live.DevID": [ "API", "MW" ],
+  "Ebay.Live.AppID": [ "API", "MW" ],
+  "Ebay.Live.CertID": [ "API", "MW" ],
 
   // Debugging / asp.net stuff
   "Debug.LazyLoading.QueryWarningLimit": null,

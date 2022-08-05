@@ -73,14 +73,17 @@ namespace ConfigParser
                     }
 
                     foundToRemove = _settingsToRemoveFromExclusions.TryGetValue(key, out List<string> envs);
-                    if (foundToRemove && (envs != null || envs.All(e => !_targetApp.CSEqual(e))))
+                    if (foundToRemove && (envs != null && envs.All(e => !_targetApp.CSEqual(e))))
                     {
                         CWrapper.WriteRed($"{key} will be removed as it doesn't match any exclusion env {envs.Delim()}");
                         continue;
                     }
 
-                    CWrapper.WriteIndent($"Stripped {key} not found in web.config for {_targetApp}, will be kept as {entry.Key}");
-                    key = entry.Key;
+                    if (!foundToRemove || envs != null) // not found or doesn't have a default value in the code
+                    {
+                        CWrapper.WriteIndent($"Stripped \"{key}\" not found in web.config for {_targetApp}, will be kept as {entry.Key}");
+                        key = entry.Key;
+                    }
                 }
 
                 Add(result, key, entry.Value);
@@ -137,7 +140,7 @@ namespace ConfigParser
                 var toAddFound = toAdd.TryGetValue(entry.Key, out List<string> appsToAdd);
                 if (toAddFound && appsToAdd.Any(e => _targetApp.CSEqual(e)))
                 {
-                    CWrapper.WriteGreen($"-- Adding ({entry.Key}, for '{_targetApp}' with value: '{entry.Value}').\n\t"
+                    CWrapper.WriteGreen($"-- Adding ({entry.Key}, for '{_targetApp}' with value: '{entry.Value}').\r\n\t"
                         + $"Please verify if the value is correct for {_targetEnv}".ToUpperInvariant());
                     result.Add(entry.Key, entry.Value);
                     continue;

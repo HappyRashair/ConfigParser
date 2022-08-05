@@ -78,5 +78,8 @@
   "ConnectionStrings:ClickAndDropClassicRootDB",
   "APISite.TrustedSiteClientID",
   "APISite.TrustedSitePassword",
-  "NewAccountRegistrationEmail"
+  "NewAccountRegistrationEmail",
+  "AnonymiseRequestEmail",
+  "CloseAccountAnonymiseRequestSupportEmail",
+  "Dropbox.TimeoutSecond"
 ]

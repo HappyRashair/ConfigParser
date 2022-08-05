@@ -1,0 +1,13 @@
+{
+  "Amazon.AccessToken": [ "MW", "API" ],
+  "SFlite.UserMessages.DefaultSender": [ "SS", "API", "MW" ],
+  "ChannelShipper.UserMessages.DefaultSender": [ "SS", "API", "MW" ],
+  "Sflite.ZendeskApi.Url": [ "CND-API" ],
+  "Shipper.ZendeskApi.Url": [ "CS-API" ],
+  "ZendeskApi.Username": [ "API" ],
+  "ZendeskApi.Password": [ "API" ],
+  "Slack.DisableReadScaleOut.WebhookUrl": [ "SS", "API", "MW", "DESKTOP" ],
+  "Slack.OperationsEngineer.WebhookUrl": [ "SS", "API", "MW", "DESKTOP" ],
+  "Stripe.ApiKey": [ "CS-API", "MW" , "SS"],
+  "Stripe.WebhookKey": [ "CS-API", "MW", "SS" ],
+}

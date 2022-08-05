@@ -12,7 +12,7 @@ Console.Write("Provide target env (DEV/UAT/LIVE): ");
 //var targetEnv = (targetEnvInput == "" ? "DEV" : targetEnvInput).ToUpper();
 Console.WriteLine("---");
 
-Console.Write("Provide target app (WEB/API/MW/SS/DESKTOP): ");
+Console.Write("Provide target app (CND/CND-API/CS/CS-API/MW/SS/DESKTOP): ");
 //var targetEnvInput = Console.ReadLine() ?? "";
 //var targetEnv = (targetEnvInput == "" ? "DEV" : targetEnvInput).ToUpper();
 Console.WriteLine("---");

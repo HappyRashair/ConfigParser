@@ -29,6 +29,7 @@
   "AuthServer.Mode",
   "Recurly.Mode",
   "Shipper.Mode",
+  "ShipperAPI.Mode",
   "SFLiteAPI.Mode",
   "NotificationService.Mode",
   "WooCommerceAPI.Mode",
@@ -72,4 +73,10 @@
   "WooCommerceAuthCallback.Url",
   "JwtSecret",
   "BigCommerce.ApiUrl",
+
+  "ManifestErrorEmail",
+  "ConnectionStrings:ClickAndDropClassicRootDB",
+  "APISite.TrustedSiteClientID",
+  "APISite.TrustedSitePassword",
+  "NewAccountRegistrationEmail"
 ]

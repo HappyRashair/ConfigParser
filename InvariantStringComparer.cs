@@ -11,7 +11,7 @@ namespace ConfigParser
     {
         public bool Equals(string? x, string? y)
         {
-            if(x == y)
+            if(x == null && y == null)
             {
                 return true;
             }
@@ -20,12 +20,12 @@ namespace ConfigParser
                 return false;
             }
 
-            return x.Equals(y, StringComparison.InvariantCultureIgnoreCase);
+            return x.Equals(y, StringComparison.OrdinalIgnoreCase);
         }
 
         public int GetHashCode([DisallowNull] string obj)
         {
-            return obj.GetHashCode();
+            return obj.ToUpperInvariant().GetHashCode();
         }
 
         public static readonly IEqualityComparer<string> Instance = new InvariantStringComparer();

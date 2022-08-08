@@ -89,4 +89,5 @@
   "Wayfair.Url",
   "Wayfair.AccessToken",
   "WooCommerce.DefaultTrackingMessageTemplate",
+  "Stripe.WebhookKey"
 ]

@@ -113,6 +113,7 @@ namespace ConfigParser
             var isExistingValueInvalid = existingValue.Contains("${");
             if (isExistingValueInvalid)
             {
+                CWrapper.WriteYellow($"{key} had invalid value, skipping value: '{existingValue}'");
                 result[key] = value;
                 return;
             }

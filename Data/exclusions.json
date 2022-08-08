@@ -18,6 +18,7 @@
   "Amazon.DeveloperAccountNumber": [ "WEB" ],
   "Amazon.USDeveloperAccountNumber": [ "WEB" ],
   "Amazon.AUDeveloperAccountNumber": [ "WEB" ],
+  "Amazon.ApplicationName": [ "WEB", "API" ],
   "Amazon.AccessToken": [ "MW", "API" ],
 
   "Amazon.Live.AccessKeyID.Europe": [ "MW", "API", "SS" ],
@@ -43,9 +44,10 @@
   "BigCommerce.InternalAuthPath": [ "WEB" ],
   "BigCommerce.LIVE.AppClientID": [ "WEB" ],
   "BigCommerce.LIVE.AppClientSecret": [ "WEB" ],
+  "AuthServer.ClientSecret": [ "WEB" ],
 
   "Dropbox.ClientID": [ "API" ],
-  "Dropbox.ClientSecret": [ "API", "DESKTOP" ],
+  "Dropbox.ClientSecret": [ "API", "DESKTOP", "SS" ],
   "Dropbox.WebAPI.AccessToken": [ "API", "DESKTOP" ],
   "Dropbox.OAuthUrl": [ "API" ],
   "Dropbox.RedirectUri": [ "API" ],
@@ -53,6 +55,7 @@
   "Dropbox.GrantType": [ "API" ],
   "Dropbox.TokenUrl": [ "API" ],
   "Dropbox.TimeoutSeconds": [ "API" ],
+  "Dropbox.ApiUrl": [ "SS" ],
 
 
   // API verion would usually invoke changes in the code - it may be kept only in web.config
@@ -64,9 +67,16 @@
   "Ebay.Live.CertID": [ "API", "MW" ],
 
   "FraudPreventionThresholdPercentage": [ "MW" ],
+  "PrintNode.Environment": [ "API", "DESKTOP" ],
+  "PrintNode.RootAccountApiKey": [ "API", "DESKTOP" ],
   "EnableAzureSignalR": [ "API" ],
-  "OlpApiExternalAccess.AccessToken": [ "API" ],
   "OLP.RetryInvalidPrices": [ "API" ],
+  "PaymentService.CallbackBaseUrl": [ "API" ],
+  // API auth only
+  "OlpApiExternalAccess.AccessToken": [ "API" ],
+  "PaymentService.CallbackAuthToken": [ "API" ],
+  "DocumentApiExternalAccess.AccessToken": [ "API" ],
+  "ClientDesktop.AccessToken": [ "API" ],
 
   // Integration-connect only
   "EtsyAPI.AppCode": [ "API" ],

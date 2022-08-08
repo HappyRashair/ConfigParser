@@ -4,7 +4,6 @@
 
   // Has default value in the code if not provided
   "InvokeJobDefaultThresholdSeconds": null,
-  "Dropbox.TimeoutSeconds": null,
   "UserMessages.NotificationTimeSpan": null,
   "UserMessages.UnreadRefreshTimeSpan": null,
   "ChannelShipper.CsUserActivityRefreshTimeSpanMin": null,
@@ -53,6 +52,7 @@
   "Dropbox.ResponseType": [ "API" ],
   "Dropbox.GrantType": [ "API" ],
   "Dropbox.TokenUrl": [ "API" ],
+  "Dropbox.TimeoutSeconds": [ "API" ],
 
 
   // API verion would usually invoke changes in the code - it may be kept only in web.config
@@ -65,12 +65,12 @@
 
   "FraudPreventionThresholdPercentage": [ "MW" ],
   "EnableAzureSignalR": [ "API" ],
-
+  "OlpApiExternalAccess.AccessToken": [ "API" ],
   "OLP.RetryInvalidPrices": [ "API" ],
 
   // Integration-connect only
   "EtsyAPI.AppCode": [ "API" ],
-  "ApplicationScopes": [ "API" ],
+  "Shopify.ApplicationScopes": [ "API" ],
 
   // Debugging / asp.net stuff
   "Debug.LazyLoading.QueryWarningLimit": null,

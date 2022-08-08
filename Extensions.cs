@@ -56,6 +56,8 @@ namespace ConfigParser
         public const string SettingsToRemove = @"Data\remove.json";
         public const string Exclusions = @"Data\exclusions.json";
         public const string EntriesToAdd = @"Data\to-add.json";
+        public const string Mappings = @"Data\mappings.json";
+        
     }
 
     internal static class Settings

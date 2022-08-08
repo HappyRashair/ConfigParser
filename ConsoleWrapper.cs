@@ -46,6 +46,13 @@ namespace ConfigParser
             Console.ResetColor();
         }
 
+        public static void WriteMagenta(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine(message);
+            Console.ResetColor();
+        }
+
         public static void WriteIndent(string message)
         {
             Console.WriteLine($"{OneIndent}{message}");

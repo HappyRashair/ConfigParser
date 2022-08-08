@@ -1,10 +1,5 @@
 ﻿using ConfigParser.Data.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace ConfigParser
 {
@@ -16,10 +11,11 @@ namespace ConfigParser
         private readonly Dictionary<string, string> _webConfigEntries;
         private readonly HashSet<string> _settingsToRemove;
         private readonly Dictionary<string, List<string>> _settingsToRemoveFromExclusions;
+        private readonly Mapper _mapper;
         private readonly bool _verboseLogging;
 
         public ConfigProcessor(string targetEnv = "DEV",
-            string targetApp = "CND-API",
+            string targetApp = "MW",
             bool verboseLogging = true)
         {
             _targetEnv = targetEnv;
@@ -28,7 +24,7 @@ namespace ConfigParser
             _webConfigEntries = ConfigManager.GetWebConfigValues();
             _settingsToRemove = new HashSet<string>(ConfigManager.GetSettingsToRemove(), InvariantStringComparer.Instance);
             _settingsToRemoveFromExclusions = _exclusions;
-
+            _mapper = new Mapper();
 
             _verboseLogging = verboseLogging;
         }
@@ -46,10 +42,12 @@ namespace ConfigParser
         {
             var result = new Dictionary<string, string>(InvariantStringComparer.Instance);
             var existingSettings = ConfigManager.GetInputConfig();
-            var notFound = new List<(string, string)>();
             foreach (var entry in existingSettings)
             {
                 var key = entry.Key.Replace("_", ".");
+                var value = entry.Value;
+                (key, value) = _mapper.Map(key, value);
+
                 var existsInWebConfig = _webConfigEntries.ContainsKey(key);
                 if (!existsInWebConfig && key.HasEnv(out var env))
                 {
@@ -58,13 +56,11 @@ namespace ConfigParser
                         CWrapper.WriteCyan($"{key} not found in web.config, skipping because of invalid env {env}", _verboseLogging);
                         continue;
                     }
-
-                    existsInWebConfig = ProcessKeyWithEnv(_webConfigEntries, ref key, env);
+                    existsInWebConfig = ProcessKeyWithEnv(ref key, ref value, env);
                 }
 
                 if (!existsInWebConfig)
                 {
-                    notFound.Add((key, entry.Value));
                     var foundToRemove = _settingsToRemove.Contains(key);
                     if (foundToRemove)
                     {
@@ -81,22 +77,23 @@ namespace ConfigParser
 
                     if (!foundToRemove || envs != null) // not found or doesn't have a default value in the code
                     {
-                        CWrapper.WriteIndent($"Stripped \"{key}\" not found in web.config for {_targetApp}, will be kept as {entry.Key}");
-                        key = entry.Key;
+                        CWrapper.WriteIndent($"Stripped \"{key}\" not found in web.config for {_targetApp}, will be kept as {key}");
+                        // key = entry.Key;
                     }
                 }
 
-                Add(result, key, entry.Value);
+                Add(result, key, value);
             }
 
             return result;
         }
 
-        private bool ProcessKeyWithEnv(Dictionary<string, string> webConfigEntries, ref string key,
+        private bool ProcessKeyWithEnv(ref string key, ref string value,
             string env)
         {
             key = key.StripEnv(env);
-            if (!webConfigEntries.ContainsKey(key))
+            (key, value) = _mapper.Map(key, value);
+            if (!_webConfigEntries.ContainsKey(key))
             {
                 return false;
             }
@@ -112,7 +109,6 @@ namespace ConfigParser
                 result.Add(key, value);
                 return;
             }
-
 
             var isExistingValueInvalid = existingValue.Contains("${");
             if (isExistingValueInvalid)

@@ -33,6 +33,7 @@
   "SFLiteAPI.Mode",
   "NotificationService.Mode",
   "WooCommerceAPI.Mode",
+  "WooCommerce.Mode",
   "ShipmentApi.Mode",
   "searchApi.Mode",
   "OrdersApi.Mode",
@@ -82,10 +83,10 @@
   "NewAccountRegistrationEmail",
   "AnonymiseRequestEmail",
   "CloseAccountAnonymiseRequestSupportEmail",
-  "Dropbox.TimeoutSecond",
   "Version.CacheVersionNumber.Minute",
   "WixApi.AppId",
 
   "Wayfair.Url",
-  "Wayfair.AccessToken"
+  "Wayfair.AccessToken",
+  "WooCommerce.DefaultTrackingMessageTemplate",
 ]

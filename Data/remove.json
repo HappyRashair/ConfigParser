@@ -57,6 +57,7 @@
   "ConsumerCollectionsGatewayApi.Mode",
   "NotonthehighstreetApi.Mode",
   "NotonthehighstreetApi.Url.AccessToken",
+  "Dropbox.Mode",
 
 
   "DefaultConnectionStringKey",
@@ -81,5 +82,10 @@
   "NewAccountRegistrationEmail",
   "AnonymiseRequestEmail",
   "CloseAccountAnonymiseRequestSupportEmail",
-  "Dropbox.TimeoutSecond"
+  "Dropbox.TimeoutSecond",
+  "Version.CacheVersionNumber.Minute",
+  "WixApi.AppId",
+
+  "Wayfair.Url",
+  "Wayfair.AccessToken"
 ]

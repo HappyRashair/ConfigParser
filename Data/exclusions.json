@@ -20,6 +20,14 @@
   "Amazon.USDeveloperAccountNumber": [ "WEB" ],
   "Amazon.AUDeveloperAccountNumber": [ "WEB" ],
   "Amazon.AccessToken": [ "MW", "API" ],
+
+  "Amazon.Live.AccessKeyID.Europe": [ "MW", "API", "SS" ],
+  "Amazon.Live.SecretKey.Europe": [ "MW", "API", "SS" ],
+  "Amazon.Live.AccessKeyID.US": [ "MW", "API", "SS" ],
+  "Amazon.Live.SecretKey.US": [ "MW", "API", "SS" ],
+  "Amazon.Live.AccessKeyID.AU": [ "MW", "API", "SS" ],
+  "Amazon.Live.SecretKey.AU": [ "MW", "API", "SS" ],
+
   "RoyalMail.MobileApp.ExternalGateway.AccessToken": [ "SS" ],
   "EnterpriseReporting.PrivateKeyPassPhrase": [ "MW" ],
   "ChannelShipper.StatusPage.Url": [ "CS" ],
@@ -30,11 +38,21 @@
   "MiddlewareWebService.EndpointMode": [ "MW" ],
 
   // Only used there
-  "BigCommerce.Url": [ "SS", "MW" ],
+  "BigCommerce.Url": [ "WEB", "SS", "MW" ],
+  "BigCommerce.AccessToken": [ "WEB", "SS", "MW" ],
   "BigCommerce.ExternalAuthUrl": [ "WEB" ],
   "BigCommerce.InternalAuthPath": [ "WEB" ],
   "BigCommerce.LIVE.AppClientID": [ "WEB" ],
   "BigCommerce.LIVE.AppClientSecret": [ "WEB" ],
+
+  "Dropbox.ClientID": [ "API" ],
+  "Dropbox.ClientSecret": [ "API", "DESKTOP" ],
+  "Dropbox.WebAPI.AccessToken": [ "API", "DESKTOP" ],
+  "Dropbox.OAuthUrl": [ "API" ],
+  "Dropbox.RedirectUri": [ "API" ],
+  "Dropbox.ResponseType": [ "API" ],
+  "Dropbox.GrantType": [ "API" ],
+  "Dropbox.TokenUrl": [ "API" ],
 
 
   // API verion would usually invoke changes in the code - it may be kept only in web.config
@@ -44,6 +62,15 @@
   "Ebay.Live.DevID": [ "API", "MW" ],
   "Ebay.Live.AppID": [ "API", "MW" ],
   "Ebay.Live.CertID": [ "API", "MW" ],
+
+  "FraudPreventionThresholdPercentage": [ "MW" ],
+  "EnableAzureSignalR": [ "API" ],
+
+  "OLP.RetryInvalidPrices": [ "API" ],
+
+  // Integration-connect only
+  "EtsyAPI.AppCode": [ "API" ],
+  "ApplicationScopes": [ "API" ],
 
   // Debugging / asp.net stuff
   "Debug.LazyLoading.QueryWarningLimit": null,

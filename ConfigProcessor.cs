@@ -15,7 +15,7 @@ namespace ConfigParser
         private readonly bool _verboseLogging;
 
         public ConfigProcessor(string targetEnv = "DEV",
-            string targetApp = "SS",
+            string targetApp = "CS",
             bool verboseLogging = true)
         {
             _targetEnv = targetEnv;
@@ -35,16 +35,26 @@ namespace ConfigParser
 
             ProcessNonExistingEntriesFromWebConfig(result);
 
-            File.WriteAllText(FilePath.ResultServerConfig, JsonSerializer.Serialize(result, options: Settings.WriteJsonSettings));
+            WriteToFiles(result);
+
         }
 
-        private Dictionary<string, string> ProcessAllExistingEntries()
+        private InputConfig ProcessAllExistingEntries()
         {
-            var result = new Dictionary<string, string>(InvariantStringComparer.Instance);
+            var result = new InputConfig();
             var existingSettings = ConfigManager.GetInputConfig();
+            ProcessSettings(result.Default, existingSettings.Default);
+            ProcessSettings(result.WestEurope, existingSettings.WestEurope);
+            ProcessSettings(result.NorthEurope, existingSettings.NorthEurope);
+
+            return result;
+        }
+
+        private void ProcessSettings(Dictionary<string, string> result, Dictionary<string, string> existingSettings)
+        {
             foreach (var entry in existingSettings)
             {
-                var key = entry.Key.Replace("_", ".");
+                var key = entry.Key;
                 var value = entry.Value;
                 (key, value) = _mapper.Map(key, value);
 
@@ -78,14 +88,11 @@ namespace ConfigParser
                     if (!foundToRemove || envs != null) // not found or doesn't have a default value in the code
                     {
                         CWrapper.WriteIndent($"Stripped \"{key}\" not found in web.config for {_targetApp}, will be kept as {key}");
-                        // key = entry.Key;
                     }
                 }
 
                 Add(result, key, value);
             }
-
-            return result;
         }
 
         private bool ProcessKeyWithEnv(ref string key, ref string value,
@@ -121,12 +128,14 @@ namespace ConfigParser
             CWrapper.WriteYellow($"{key} was already added, skipping value: '{value}'");
         }
 
-        private void ProcessNonExistingEntriesFromWebConfig(Dictionary<string, string> result)
+        private void ProcessNonExistingEntriesFromWebConfig(InputConfig result)
         {
             CWrapper.WriteCyan("\n\nNon-existing entries from web.config:");
             var toAdd = ConfigManager.GetEntriesToAdd();
             var toAddPerEnv = ConfigManager.GetEntriesToAddPerEnv();
-            foreach (var entry in _webConfigEntries.Where(kvp => !result.ContainsKey(kvp.Key)))
+            var allEntries = result.AllEntries;
+            var resultDefault = result.Default;
+            foreach (var entry in _webConfigEntries.Where(kvp => !allEntries.ContainsKey(kvp.Key)))
             {
                 var exclusionFound = _exclusions.TryGetValue(entry.Key, out List<string> envs);
                 if (exclusionFound && (envs == null || envs.All(e => !_targetApp.CSEqual(e))))
@@ -140,7 +149,7 @@ namespace ConfigParser
                 {
                     CWrapper.WriteGreen($"-- Adding ({entry.Key}, for '{_targetApp}' with value: '{entry.Value}').\r\n\t"
                         + $"Please verify if the value is correct for {_targetEnv}".ToUpperInvariant());
-                    result.Add(entry.Key, entry.Value);
+                    resultDefault.Add(entry.Key, entry.Value);
                     continue;
                 }
 
@@ -156,11 +165,23 @@ namespace ConfigParser
                     var value = valuesPerEnv[_targetEnv];
                     CWrapper.WriteGreen($"-- Adding ({entry.Key}, for '{_targetApp}' with value: '{value}').\r\n\t"
                         + $"Please verify if the value is correct!".ToUpperInvariant());
-                    result.Add(entry.Key, value);
+                    resultDefault.Add(entry.Key, value);
                     continue;
                 }
 
                 CWrapper.WriteYellow($"Found in web.config but not in input.config: ({entry.Key}: {entry.Value})");
+            }
+        }
+
+        private static void WriteToFiles(InputConfig result)
+        {
+            var serializedResult = JsonSerializer.Serialize(result, options: Settings.WriteJsonSettings);
+            File.WriteAllText(FilePath.ResultServerConfig, serializedResult);
+            
+            var solutionFilePath = Path.Combine("..", "..", "..", FilePath.ResultServerConfig);
+            if (File.Exists(solutionFilePath))
+            {
+                File.WriteAllText(solutionFilePath, serializedResult);
             }
         }
     }

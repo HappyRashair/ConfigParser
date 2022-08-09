@@ -13,18 +13,26 @@ namespace ConfigParser
     internal static class ConfigManager
     {
 
-        public static Dictionary<string, string> GetInputConfig()
+        public static InputConfig GetInputConfig()
         {
             string inputFile = File.ReadAllText(FilePath.InputServerConfig);
             var input = JsonSerializer.Deserialize<InputConfig>(inputFile);
-            var result = new Dictionary<string, string>(InvariantStringComparer.Instance);
-            foreach (var entry in input.AllEntries)
-            {
-                result.Add(entry.Key.Replace("_", "."), entry.Value);
-            }
+
+            var result = new InputConfig();
+            AddWithReplace(input.Default, result.Default);
+            AddWithReplace(input.WestEurope, result.WestEurope);
+            AddWithReplace(input.NorthEurope, result.NorthEurope);
+
             return result;
         }
 
+        private static void AddWithReplace(Dictionary<string, string> input, Dictionary<string, string> result)
+        {
+            foreach (var entry in input)
+            {
+                result.Add(entry.Key.Replace("_", "."), entry.Value);
+            }
+        }
 
         public static Dictionary<string, string> GetWebConfigValues()
         {

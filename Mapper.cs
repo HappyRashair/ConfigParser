@@ -9,6 +9,7 @@ namespace ConfigParser
 {
     internal class Mapper
     {
+        private const string RegexReplaceSeparator = "###";
         private readonly Dictionary<string, string> _mappings;
 
         public Mapper()
@@ -20,15 +21,20 @@ namespace ConfigParser
         {
             var resultKey = key;
             var resultValue = value;
-            if (_mappings.TryGetValue(key, out var mappedKey))
+            if (_mappings.TryGetValue(key, out var mappingStr))
             {
-                CWrapper.WriteMagenta($"Renaming key '{resultKey}' to '{mappedKey}'");
-                resultKey = mappedKey;
+                var mappedKey = IsRegex(mappingStr) ? ProcessRegex(resultValue, mappingStr) : mappingStr;
+                if (mappedKey != resultKey)
+                {
+                    CWrapper.WriteMagenta($"Renaming key '{resultKey}' to '{mappedKey}'");
+                    resultKey = mappedKey;
+                }
+
             }
 
-            if (_mappings.TryGetValue($"{resultKey}.Value", out string replacementRegexPair))
+            if (_mappings.TryGetValue($"{resultKey}.Value", out mappingStr))
             {
-                var mappedValue = ProcessRegex(resultValue, replacementRegexPair);
+                var mappedValue = IsRegex(mappingStr) ? ProcessRegex(resultValue, mappingStr) : mappingStr;
                 if (mappedValue != resultValue)
                 {
                     CWrapper.WriteMagenta($"Renaming value '{resultValue}' to '{mappedValue}'");
@@ -39,9 +45,14 @@ namespace ConfigParser
             return (resultKey, resultValue);
         }
 
+        public bool IsRegex(string reg)
+        {
+            return reg.Contains(RegexReplaceSeparator);
+        }
+
         private static string ProcessRegex(string value, string replacementRegexPair)
         {
-            var pair = replacementRegexPair.Split("###");
+            var pair = replacementRegexPair.Split(RegexReplaceSeparator);
             var regex = pair[0];
             var replacement = pair[1];
             return Regex.Replace(value, regex, replacement, RegexOptions.IgnoreCase);

@@ -10,7 +10,7 @@ namespace ConfigParser
 {
     internal static class Extensions
     {
-        private static readonly List<string> _envs = "LOCAL,DEV,UAT,TEST,LIVE,PROD".Split(',').ToList();
+        private static readonly List<string> _envs = "LOCAL,DEV,UAT,TEST,LIVE".Split(',').ToList();
 
         public static bool HasEnv(this string key, out string? env)
         {
@@ -18,9 +18,9 @@ namespace ConfigParser
             return env != null;
         }
 
-        public static bool IsInvalidEnv(this string env)
+        public static List<string> GetValidEnvs()
         {
-            return "TEST".Equals(env, StringComparison.InvariantCultureIgnoreCase);
+            return _envs.Except(new[] { "LOCAL", "TEST" }).ToList();
         }
 
         public static string StripEnv(this string key, string env)
@@ -56,6 +56,7 @@ namespace ConfigParser
         public const string SettingsToRemove = @"Data\remove.json";
         public const string Exclusions = @"Data\exclusions.json";
         public const string EntriesToAdd = @"Data\to-add.json";
+        public const string EntriesToAddPerEnv = @"Data\to-add-env.xml";
         public const string Mappings = @"Data\mappings.json";
         
     }

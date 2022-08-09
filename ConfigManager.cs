@@ -73,6 +73,50 @@ namespace ConfigParser
             return new Dictionary<string, List<string>>(input, InvariantStringComparer.Instance);
         }
 
+        internal static Dictionary<string, Dictionary<string, string>> GetEntriesToAddPerEnv()
+        {
+            var xmlDoc = new XmlDocument(); // Create an XML document object
+            xmlDoc.Load(FilePath.EntriesToAddPerEnv); // Load the XML document from the specified file
+
+            var appSettingsPath = $"/configuration/appSettings/add";
+            var result = new Dictionary<string, Dictionary<string, string>>(InvariantStringComparer.Instance);
+            var validEnvs = Extensions.GetValidEnvs();
+            foreach (XmlNode entry in xmlDoc.DocumentElement.SelectNodes(appSettingsPath))
+            {
+                var inputKey = entry.Attributes["key"].Value;
+                var value = entry.Attributes["value"].Value;
+                if (!inputKey.HasEnv(out string env)) // same for all envs
+                {
+                    foreach(var vEnv in validEnvs)
+                    {
+                        result.Add($"{inputKey}.{vEnv}", GetNewEntry(vEnv, value));
+                    }
+                }
+                
+                var key = inputKey.Replace($".{env}","");
+                if (result.ContainsKey(key))
+                {
+                    result[key].Add(env, value);
+                }
+                else
+                {
+                    result.Add(key, GetNewEntry(value, env));
+                }
+            }
+
+            if (!result.Any())
+            {
+                throw new InvalidOperationException($"No entries in webconfig path '{appSettingsPath}' for file {FilePath.WebConfig}");
+            }
+
+            return result;
+        }
+
+        private static Dictionary<string, string> GetNewEntry(string value, string env)
+        {
+            return new Dictionary<string, string>(InvariantStringComparer.Instance) { { env, value } };
+        }
+
         internal static Dictionary<string, string> GetMappings()
         {
             string inputFile = File.ReadAllText(FilePath.Mappings);

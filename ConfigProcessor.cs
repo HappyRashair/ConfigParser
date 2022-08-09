@@ -15,7 +15,7 @@ namespace ConfigParser
         private readonly bool _verboseLogging;
 
         public ConfigProcessor(string targetEnv = "DEV",
-            string targetApp = "MW",
+            string targetApp = "SS",
             bool verboseLogging = true)
         {
             _targetEnv = targetEnv;
@@ -125,6 +125,7 @@ namespace ConfigParser
         {
             CWrapper.WriteCyan("\n\nNon-existing entries from web.config:");
             var toAdd = ConfigManager.GetEntriesToAdd();
+            var toAddPerEnv = ConfigManager.GetEntriesToAddPerEnv();
             foreach (var entry in _webConfigEntries.Where(kvp => !result.ContainsKey(kvp.Key)))
             {
                 var exclusionFound = _exclusions.TryGetValue(entry.Key, out List<string> envs);
@@ -143,16 +144,19 @@ namespace ConfigParser
                     continue;
                 }
 
-                //if (exclusionFound && _targetApp.Equals == _targetApp)
-                //{
-                //    CWrapper.WriteCyan($"Skipping ({entry.Key}, because of exclusion for '{value}' app)");
-                //    continue;
-                //}
-
                 if (toAddFound && _targetApp.IsCsSpecific())
                 {
                     CWrapper.WriteCyan($"Skipping ({entry.Key}, because of exclusion for '{_targetApp}' app, " +
                         $"would be added for {appsToAdd.Delim()}");
+                    continue;
+                }
+
+                if (toAddPerEnv.TryGetValue(entry.Key, out var valuesPerEnv))
+                {
+                    var value = valuesPerEnv[_targetEnv];
+                    CWrapper.WriteGreen($"-- Adding ({entry.Key}, for '{_targetApp}' with value: '{value}').\r\n\t"
+                        + $"Please verify if the value is correct!".ToUpperInvariant());
+                    result.Add(entry.Key, value);
                     continue;
                 }
 

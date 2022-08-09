@@ -12,4 +12,5 @@
   "Stripe.ApiKey": [ "CS-API", "MW", "SS" ],
   "Stripe.WebhookKey": [ "CS-API", "MW", "SS" ],
   "PaymentService.WorldpayHmacSecret": [ "WEB" ],
+  "ServiceName":  ["API", "SS", "DESKTOP"]
 }

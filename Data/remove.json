@@ -89,5 +89,13 @@
   "Wayfair.Url",
   "Wayfair.AccessToken",
   "WooCommerce.DefaultTrackingMessageTemplate",
-  "Stripe.WebhookKey"
+  "Stripe.WebhookKey",
+
+  "RedisHost",
+  "RedisPort",
+  "RedisSSL",
+  "Slack.ReportFailures.WebhookUrl",
+  "ClientSite.Url",
+  "PreserveLoginUrl",
+  "SupportSite.ShowBasicBarcodesTab"
 ]

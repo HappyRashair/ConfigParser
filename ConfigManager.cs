@@ -87,13 +87,16 @@ namespace ConfigParser
                 var value = entry.Attributes["value"].Value;
                 if (!inputKey.HasEnv(out string env)) // same for all envs
                 {
-                    foreach(var vEnv in validEnvs)
+                    var envsToValue = new Dictionary<string, string>(InvariantStringComparer.Instance);
+                    foreach (var vEnv in validEnvs)
                     {
-                        result.Add($"{inputKey}.{vEnv}", GetNewEntry(vEnv, value));
+                        envsToValue.Add(vEnv, value);
                     }
+                    result.Add(inputKey, envsToValue);
+                    continue;
                 }
-                
-                var key = inputKey.Replace($".{env}","");
+
+                var key = inputKey.Replace($".{env}", "");
                 if (result.ContainsKey(key))
                 {
                     result[key].Add(env, value);

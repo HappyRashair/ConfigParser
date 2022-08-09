@@ -8,6 +8,7 @@
   "UserMessages.UnreadRefreshTimeSpan": null,
   "ChannelShipper.CsUserActivityRefreshTimeSpanMin": null,
   "ReadScaleOut.AutoDisable.TimeoutsLimit": null,
+  "MaintenanceModeSleepMinutues": null,
 
   // Not really used atm, may not be valid, but we will keep it in web.config
   "Ebay.Sandbox.ApiURL": null,
@@ -69,9 +70,16 @@
   "FraudPreventionThresholdPercentage": [ "MW" ],
   "PrintNode.Environment": [ "API", "DESKTOP" ],
   "PrintNode.RootAccountApiKey": [ "API", "DESKTOP" ],
-  "EnableAzureSignalR": [ "API" ],
   "OLP.RetryInvalidPrices": [ "API" ],
   "PaymentService.CallbackBaseUrl": [ "API" ],
+  "UserMessages.MessagesTimeFrameInDays": [ "API" ],
+
+  // Tech
+  "EnableAzureSignalR": [ "API" ],
+  "AzureSignalR-ConnectionString-Primary": [ "API" ],
+  "AzureSignalR-ConnectionString-Secondary": [ "API" ],
+  "RedisSignalRServerKey": ["API"],
+
   // API auth only
   "OlpApiExternalAccess.AccessToken": [ "API" ],
   "PaymentService.CallbackAuthToken": [ "API" ],

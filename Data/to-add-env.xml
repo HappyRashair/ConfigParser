@@ -8,6 +8,7 @@
     <add key="WixApi.Url" value="http://wix-integration.integrations.svc.cluster.local/api/v1"/>
     <add key="CdiscountApi.Url" value="http://cdiscount-integration.integrations.svc.cluster.local/api"/>
     <add key="FruugoApi.Url" value="http://fruugo-integration.integrations.svc.cluster.local/api"/>
+   
   
   </appSettings>
 </configuration>

@@ -1,8 +1,8 @@
 {
-  "Amazon.AccessToken": [ "MW", "API" ],
   "Amazon.AUDeveloperAccountNumber": [ "WEB" ],
   "SFlite.UserMessages.DefaultSender": [ "SS", "API", "MW" ],
   "ChannelShipper.UserMessages.DefaultSender": [ "SS", "API", "MW" ],
+  "ChannelShipper.StatusPage.Url": ["CS"],
   "Sflite.ZendeskApi.Url": [ "CND-API" ],
   "Shipper.ZendeskApi.Url": [ "CS-API" ],
   "ZendeskApi.Username": [ "API" ],
@@ -12,5 +12,5 @@
   "Stripe.ApiKey": [ "CS-API", "MW", "SS" ],
   "Stripe.WebhookKey": [ "CS-API", "MW", "SS" ],
   "PaymentService.WorldpayHmacSecret": [ "WEB" ],
-  "ServiceName":  ["API", "SS", "DESKTOP"]
+  "ServiceName": [ "API", "SS", "DESKTOP" ]
 }

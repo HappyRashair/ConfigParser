@@ -10,11 +10,6 @@
   "ReadScaleOut.AutoDisable.TimeoutsLimit": null,
   "MaintenanceModeSleepMinutues": null,
 
-  // Not really used atm, may not be valid, but we will keep it in web.config
-  "Ebay.Sandbox.ApiURL": null,
-  "Ebay.Sandbox.ShoppingApiURL": null,
-  "Ebay.Sandbox.SignInURL": null,
-
   // Only keep for {env}
   "Amazon.DeveloperAccountNumber": [ "WEB" ],
   "Amazon.USDeveloperAccountNumber": [ "WEB" ],
@@ -48,7 +43,7 @@
   "AuthServer.ClientSecret": [ "WEB" ],
 
   "Dropbox.ClientID": [ "API" ],
-  "Dropbox.ClientSecret": [ "API", "DESKTOP", "SS" ],
+  "Dropbox.ClientSecret": [ "API", "SS" ],
   "Dropbox.WebAPI.AccessToken": [ "API", "DESKTOP" ],
   "Dropbox.OAuthUrl": [ "API" ],
   "Dropbox.RedirectUri": [ "API" ],
@@ -59,26 +54,85 @@
   "Dropbox.ApiUrl": [ "SS" ],
 
 
+  // Only used there
+  "Ebay.Sandbox.ShoppingApiURL": [ "API" ],
+  "Ebay.Live.ShoppingApiURL": [ "API" ],
+
+  "Ebay.Sandbox.RuName": [ "API", "MW", "SS" ],
+  "Ebay.Sandbox.ApiURL": [ "API", "MW", "SS" ],
+  "Ebay.Sandbox.DevID": [ "API", "MW", "SS" ],
+  "Ebay.Sandbox.AppID": [ "API", "MW", "SS" ],
+  "Ebay.Sandbox.CertID": [ "API", "MW", "SS" ],
+  "Ebay.Live.RuName": [ "API", "MW", "SS" ],
+  "Ebay.Live.ApiURL": [ "API", "MW", "SS" ],
+  "Ebay.Live.DevID": [ "API", "MW", "SS" ],
+  "Ebay.Live.AppID": [ "API", "MW", "SS" ],
+  "Ebay.Live.CertID": [ "API", "MW", "SS" ],
   // API verion would usually invoke changes in the code - it may be kept only in web.config
+  "Ebay.Sandbox.ApiVersion": null,
+  "Ebay.Sandbox.ShoppingApiVersion": null,
   "Ebay.Live.ApiVersion": null,
   "Ebay.Live.ShoppingApiVersion": null,
-  // Only used there
-  "Ebay.Live.DevID": [ "API", "MW" ],
-  "Ebay.Live.AppID": [ "API", "MW" ],
-  "Ebay.Live.CertID": [ "API", "MW" ],
 
+  "PayPal.Sandbox.WebExperienceProfileID": [ "API" ],
+  "PayPal.Live.WebExperienceProfileID": [ "API" ],
+
+  "PayPal.Sandbox.APIEndpoint": [ "API", "MW", "SS" ],
+  "PayPal.Sandbox.RESTAppClientID": [ "API", "MW", "SS" ],
+  "PayPal.Sandbox.RESTAppClientSecret": [ "API", "MW", "SS" ],
+  "PayPal.Live.APIEndpoint": [ "API", "MW", "SS" ],
+  "PayPal.Live.RESTAppClientID": [ "API", "MW", "SS" ],
+  "PayPal.Live.RESTAppClientSecret": [ "API", "MW", "SS" ],
+
+  "OLP.Mode": [ "API", "MW", "SS" ],
+  "OLP.Dev.Password": [ "API", "MW", "SS" ],
+  "OLP.Dev.ApplicationID": [ "API", "MW", "SS" ],
+  "OLP.Live.Password": [ "API", "MW", "SS" ],
+  "OLP.Live.ApplicationID": [ "API", "MW", "SS" ],
+  "OlpProxy.Url": [ "API", "MW", "SS" ],
+  "OlpProxy.AccessToken": [ "API", "MW", "SS" ],
+
+  // Various
   "FraudPreventionThresholdPercentage": [ "MW" ],
+
+  "Slack.ReportMiddlewareJobFailures.WebhookUrl": [ "MW" ],
+  "Slack.SfLiteAnonymisationRequests.WebhookUrl": [ "API", "MW" ],
+  "Slack.ProcessOLPMaintenanceSchedule.WebhookUrl": [ "MW", "SS" ],
+
   "PrintNode.Environment": [ "API", "DESKTOP" ],
   "PrintNode.RootAccountApiKey": [ "API", "DESKTOP" ],
+
   "OLP.RetryInvalidPrices": [ "API" ],
   "PaymentService.CallbackBaseUrl": [ "API" ],
   "UserMessages.MessagesTimeFrameInDays": [ "API" ],
+  "SpreadsheetImportSettings.MaxDaysToDownloadFile": [ "API" ],
+  "DisableDeploymentNotifications": [ "API" ],
+
+  "AvailableSites": [ "WEB", "API" ],
+  "Shipper.Suffix": [ "WEB", "API" ],
+  "SFLite.Suffix": [ "WEB", "API" ],
+  "CookieSuffix": [ "WEB", "API" ],
+
+  "Tealium.Account": [ "WEB" ],
+  "Tealium.Profile": [ "WEB" ],
+  "Tealium.Environment": [ "WEB" ],
+  "Tealium.EnabledCheckCacheTimeoutSeconds": [ "WEB" ],
+  "AngularJS.DebugEnabled": [ "WEB" ],
+  "AngularJS.DigestHudEnabled": [ "WEB" ],
+  "AngularJS.Templates.Bundled": [ "WEB" ],
+
+  "SupportSite.Mode": [ "SS" ],
+  "RoyalMail.COSS.WireNumber": [ "MW", "SS" ],
+  "RoyalMail.COSS.ChannelIdentifier": [ "MW", "SS" ],
+  "MiddlewareWebService.EndpointAddress": [ "API", "MW", "SS" ],
+
 
   // Tech
   "EnableAzureSignalR": [ "API" ],
   "AzureSignalR-ConnectionString-Primary": [ "API" ],
   "AzureSignalR-ConnectionString-Secondary": [ "API" ],
-  "RedisSignalRServerKey": ["API"],
+  "RedisSignalRServerKey": [ "API" ],
+  "EnableRedis": [ "API" ],
 
   // API auth only
   "OlpApiExternalAccess.AccessToken": [ "API" ],

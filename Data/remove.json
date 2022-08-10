@@ -97,5 +97,13 @@
   "Slack.ReportFailures.WebhookUrl",
   "ClientSite.Url",
   "PreserveLoginUrl",
-  "SupportSite.ShowBasicBarcodesTab"
+  "SupportSite.ShowBasicBarcodesTab",
+  "RoyalMail.MobileApp.ExternalGateway.Mode",
+
+  "DROPBOX",
+  "Collections.NetCostPounds",
+  "VatPercentage",
+  "ManifestRetryDelayMinutes",
+  "Ebay.Live.SignInURL",
+  "Ebay.Sandbox.SignInURL"
 ]

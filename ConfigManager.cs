@@ -134,5 +134,12 @@ namespace ConfigParser
             var input = JsonSerializer.Deserialize<Dictionary<string, string>>(inputFile, Settings.ReadJsonSettings);
             return new Dictionary<string, string>(input, InvariantStringComparer.Instance);
         }
+
+        internal static HashSet<string> GetRegexMappings()
+        {
+            string inputFile = File.ReadAllText(FilePath.RegexMappings);
+            var input = JsonSerializer.Deserialize<List<string>>(inputFile, Settings.ReadJsonSettings);
+            return new HashSet<string>(input, InvariantStringComparer.Instance);
+        }
     }
 }

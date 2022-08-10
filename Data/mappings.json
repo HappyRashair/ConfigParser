@@ -2,7 +2,7 @@
   "VisualSoft.Url": "VisualSoftApi.Url",
   "VisualSoft.AccessToken": "VisualSoftApi.AccessToken",
   "Dropbox.TimeoutSecond": "Dropbox.TimeoutSeconds",
-  
+
   "WooCommerce.ApiUrl": "WooCommerceApi.Url",
   "WooCommerceApi.Url.Value": "(.+?)(/)?(?<!api/?)$###$1/api"
 }

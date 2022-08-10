@@ -11,51 +11,87 @@ namespace ConfigParser
     {
         private const string RegexReplaceSeparator = "###";
         private readonly Dictionary<string, string> _mappings;
+        private readonly Dictionary<Regex, string> _regexMappings;
 
         public Mapper()
         {
             _mappings = ConfigManager.GetMappings();
+
+            var regexMappings = ConfigManager.GetRegexMappings();
+            if (regexMappings.FirstOrDefault(r => !IsReplaceRegex(r)) is string str)
+            {
+                throw new InvalidOperationException($"'{str}' is not a valid regex");
+            }
+            _regexMappings = regexMappings.Select(r => GetRegexWithReplacement(r))
+                .ToDictionary(p => p.regex, p => p.replacement);
         }
 
-        public (string, string value) Map(string key, string value)
-        {
-            var resultKey = key;
-            var resultValue = value;
-            if (_mappings.TryGetValue(key, out var mappingStr))
-            {
-                var mappedKey = IsRegex(mappingStr) ? ProcessRegex(resultValue, mappingStr) : mappingStr;
-                if (mappedKey != resultKey)
-                {
-                    CWrapper.WriteMagenta($"Renaming key '{resultKey}' to '{mappedKey}'");
-                    resultKey = mappedKey;
-                }
-
-            }
-
-            if (_mappings.TryGetValue($"{resultKey}.Value", out mappingStr))
-            {
-                var mappedValue = IsRegex(mappingStr) ? ProcessRegex(resultValue, mappingStr) : mappingStr;
-                if (mappedValue != resultValue)
-                {
-                    CWrapper.WriteMagenta($"Renaming value '{resultValue}' to '{mappedValue}'");
-                    resultValue = mappedValue;
-                }
-            }
-
-            return (resultKey, resultValue);
-        }
-
-        public bool IsRegex(string reg)
+        public static bool IsReplaceRegex(string reg)
         {
             return reg.Contains(RegexReplaceSeparator);
         }
 
+        public (string, string value) Map(string key, string value)
+        {
+            (key, value) = MapSimple(key, value);
+            (key) = MapRegex(key);
+
+            return (key, value);
+        }
+
+        private (string key, string value) MapSimple(string key, string value)
+        {
+            if (_mappings.TryGetValue(key, out var mappedKey))
+            {
+                WriteMapped(key, mappedKey, "key");
+                key = mappedKey;
+            }
+
+            if (_mappings.TryGetValue($"{key}.Value", out var valueMappingStr))
+            {
+                // We may want to replace the whole value or just a part of it
+                var mappedValue = IsReplaceRegex(valueMappingStr) ? ProcessRegex(value, valueMappingStr) : valueMappingStr;
+                if (mappedValue != value)
+                {
+                    WriteMapped(value, mappedValue, "value");
+                    value = mappedValue;
+                }
+            }
+
+            return (key, value);
+        }
+
+        private static void WriteMapped(string key, string mappedKey, string what)
+        {
+            CWrapper.WriteMagenta($"Mapping {what} '{key}' to '{mappedKey}'");
+        }
+
+        private string MapRegex(string input)
+        {
+            foreach (var regex in _regexMappings)
+            {
+                var replacedStr = regex.Key.Replace(input, regex.Value);
+                if (replacedStr != input)
+                {
+                    WriteMapped(input, replacedStr, "key");
+                    input = replacedStr;
+                }
+            }
+
+            return input;
+        }
+
+
         private static string ProcessRegex(string value, string replacementRegexPair)
         {
+            var (regex, replacement) = GetRegexWithReplacement(replacementRegexPair);
+            return regex.Replace(value, replacement);
+        }
+
+        private static (Regex regex, string replacement) GetRegexWithReplacement(string replacementRegexPair)
+        {
             var pair = replacementRegexPair.Split(RegexReplaceSeparator);
-            var regex = pair[0];
-            var replacement = pair[1];
-            return Regex.Replace(value, regex, replacement, RegexOptions.IgnoreCase);
+            return (new Regex(pair[0], RegexOptions.Compiled | RegexOptions.IgnoreCase), pair[1]);
         }
     }
 }

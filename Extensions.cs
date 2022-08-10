@@ -58,7 +58,8 @@ namespace ConfigParser
         public const string EntriesToAdd = @"Data\to-add.json";
         public const string EntriesToAddPerEnv = @"Data\to-add-env.xml";
         public const string Mappings = @"Data\mappings.json";
-        
+        public const string RegexMappings = @"Data\regex-mappings.json";
+
     }
 
     internal static class Settings

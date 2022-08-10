@@ -30,6 +30,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Data\regex-mappings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\mappings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -1,4 +1,4 @@
 [
   "\\.AuthKey$###.AccessToken",
-
+  "\\.ApiKey$###.AccessToken"
 ]

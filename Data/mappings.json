@@ -4,5 +4,14 @@
   "Dropbox.TimeoutSecond": "Dropbox.TimeoutSeconds",
 
   "WooCommerce.ApiUrl": "WooCommerceApi.Url",
-  "WooCommerceApi.Url.Value": "(.+?)(/)?(?<!api/?)$###$1/api"
+  "WooCommerceApi.Url.Value": "(.+?)(/)?(?<!api/?)$###$1/api",
+
+  "Shopify.APIKey": "Shopify.ClientId",
+  "Shopify.APISecret": "Shopify.ClientSecret",
+  "PayPal.Sandbox.RESTAppClientID": "PayPal.Sandbox.ClientId",
+  "PayPal.Sandbox.RESTAppClientSecret": "PayPal.Sandbox.ClientSecret",
+  "PayPal.Live.RESTAppClientID": "PayPal.Live.ClientId",
+  "PayPal.Live.RESTAppClientSecret": "PayPal.Live.ClientSecret",
+  "BigCommerce.LIVE.AppClientID": "BigCommerce.ClientId",
+  "BigCommerce.LIVE.AppClientSecret": "BigCommerce.ClientSecret"
 }

@@ -38,8 +38,8 @@
   "BigCommerce.AccessToken": [ "WEB", "SS", "MW" ],
   "BigCommerce.ExternalAuthUrl": [ "WEB" ],
   "BigCommerce.InternalAuthPath": [ "WEB" ],
-  "BigCommerce.LIVE.AppClientID": [ "WEB" ],
-  "BigCommerce.LIVE.AppClientSecret": [ "WEB" ],
+  "BigCommerce.ClientId": [ "WEB" ],
+  "BigCommerce.ClientSecret": [ "WEB" ],
   "AuthServer.ClientSecret": [ "WEB" ],
 
   "Dropbox.ClientID": [ "API" ],
@@ -78,11 +78,11 @@
   "PayPal.Live.WebExperienceProfileID": [ "API" ],
 
   "PayPal.Sandbox.APIEndpoint": [ "API", "MW", "SS" ],
-  "PayPal.Sandbox.RESTAppClientID": [ "API", "MW", "SS" ],
-  "PayPal.Sandbox.RESTAppClientSecret": [ "API", "MW", "SS" ],
+  "PayPal.Sandbox.ClientID": [ "API", "MW", "SS" ],
+  "PayPal.Sandbox.ClientSecret": [ "API", "MW", "SS" ],
   "PayPal.Live.APIEndpoint": [ "API", "MW", "SS" ],
-  "PayPal.Live.RESTAppClientID": [ "API", "MW", "SS" ],
-  "PayPal.Live.RESTAppClientSecret": [ "API", "MW", "SS" ],
+  "PayPal.Live.ClientID": [ "API", "MW", "SS" ],
+  "PayPal.Live.ClientSecret": [ "API", "MW", "SS" ],
 
   "OLP.Mode": [ "API", "MW", "SS" ],
   "OLP.Dev.Password": [ "API", "MW", "SS" ],
@@ -107,7 +107,8 @@
   "UserMessages.MessagesTimeFrameInDays": [ "API" ],
   "SpreadsheetImportSettings.MaxDaysToDownloadFile": [ "API" ],
   "DisableDeploymentNotifications": [ "API" ],
-
+  "Stripe.AccessToken": [ "CS-API", "MW", "SS" ],
+  
   "AvailableSites": [ "WEB", "API" ],
   "Shipper.Suffix": [ "WEB", "API" ],
   "SFLite.Suffix": [ "WEB", "API" ],
@@ -122,6 +123,7 @@
   "AngularJS.Templates.Bundled": [ "WEB" ],
 
   "SupportSite.Mode": [ "SS" ],
+  "SupportSite.ShowBasicBarcodesTab":  ["SS"],
   "RoyalMail.COSS.WireNumber": [ "MW", "SS" ],
   "RoyalMail.COSS.ChannelIdentifier": [ "MW", "SS" ],
   "MiddlewareWebService.EndpointAddress": [ "API", "MW", "SS" ],

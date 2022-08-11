@@ -109,7 +109,7 @@ namespace ConfigParser
             return true;
         }
 
-        public static void Add(Dictionary<string, string> result, string key, string value)
+        public void Add(Dictionary<string, string> result, string key, string value)
         {
             if (!result.TryGetValue(key, out var existingValue))
             {
@@ -120,12 +120,12 @@ namespace ConfigParser
             var isExistingValueInvalid = existingValue.Contains("${");
             if (isExistingValueInvalid)
             {
-                CWrapper.WriteYellow($"{key} had invalid value, skipping value: '{existingValue}'");
+                CWrapper.WriteYellow($"{key} had invalid value, skipping value: '{existingValue}'", _verboseLogging);
                 result[key] = value;
                 return;
             }
 
-            CWrapper.WriteYellow($"{key} was already added, skipping value: '{value}'");
+            CWrapper.WriteYellow($"{key} was already added, skipping value: '{value}'", _verboseLogging);
         }
 
         private void ProcessNonExistingEntriesFromWebConfig(InputConfig result)

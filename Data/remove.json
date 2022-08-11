@@ -97,7 +97,6 @@
   "Slack.ReportFailures.WebhookUrl",
   "ClientSite.Url",
   "PreserveLoginUrl",
-  "SupportSite.ShowBasicBarcodesTab",
   "RoyalMail.MobileApp.ExternalGateway.Mode",
 
   "DROPBOX",

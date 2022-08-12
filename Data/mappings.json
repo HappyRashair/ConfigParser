@@ -79,4 +79,6 @@
   "ShipmentServiceApi.CallbackAuthToken": "ShipmentService.CallbackAuthToken",
 
   "MiddlewareWebService.EndpointAddress": "MiddlewareWebService.Url",
+  "MiddlewareWebService.PublicEndpointAddress": "MiddlewareWebService.PublicUrl",
+  "MiddlewareWebService.EndpointMode": "MiddlewareWebService.Mode"
 }

@@ -177,6 +177,8 @@
   "RoyalMail.COSS.WireNumber": [ "MW", "SS" ],
   "RoyalMail.COSS.ChannelIdentifier": [ "MW", "SS" ],
   "MiddlewareWebService.Url": [ "API", "MW", "SS" ],
+  "MiddlewareWebService.PublicUrl": [ "SS" ],
+  "MiddlewareWebService.Mode": ["MW"],
 
 
   // Tech

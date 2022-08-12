@@ -109,5 +109,4 @@
   "LogReadOnlyContextExecutionInfo",
   "ConsumerCollectionsGatewayApi.Url",
   "ConsumerCollectionsGatewayApi.AccessToken",
-  "MiddlewareWebService.PublicEndpointAddress"
 ]

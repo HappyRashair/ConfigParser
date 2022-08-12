@@ -1,11 +1,14 @@
 {
+  // Config server discrepancies
   "VisualSoft.Url": "VisualSoftApi.Url",
   "VisualSoft.AccessToken": "VisualSoftApi.AccessToken",
   "Dropbox.TimeoutSecond": "Dropbox.TimeoutSeconds",
 
-  "WooCommerce.ApiUrl": "WooCommerceApi.Url",
-  "WooCommerceApi.Url.Value": "(.+?)(/)?(?<!api/?)$###$1/api",
+  // Bug AB#44994
+  "WooCommerce.ApiUrl": "WooCommerce.Integration.Url",
+  "WooCommerce.Integration.Url.Value": "(.+?)(/)?(?<!api/?)$###$1/api",
 
+  // All to ClientId and ClientSecret
   "Shopify.APIKey": "Shopify.ClientId",
   "Shopify.APISecret": "Shopify.ClientSecret",
   "PayPal.Sandbox.RESTAppClientID": "PayPal.Sandbox.ClientId",
@@ -13,5 +16,40 @@
   "PayPal.Live.RESTAppClientID": "PayPal.Live.ClientId",
   "PayPal.Live.RESTAppClientSecret": "PayPal.Live.ClientSecret",
   "BigCommerce.LIVE.AppClientID": "BigCommerce.ClientId",
-  "BigCommerce.LIVE.AppClientSecret": "BigCommerce.ClientSecret"
+  "BigCommerce.LIVE.AppClientSecret": "BigCommerce.ClientSecret",
+
+  // Intergrations
+  "Amazon.Url": "Amazon.Integration.Url",
+  "Amazon.AccessToken": "Amazon.Integration.AccessToken",
+  "Amazon.AppName": "Amazon.Integration.AppName",
+  "EbayApi.Url": "Ebay.Integration.Url",
+  "EbayApi.AccessToken": "Ebay.Integration.AccessToken",
+  "EbayApi.Application": "Ebay.Integration.Application",
+
+  "BigCommerce.Url": "BigCommerce.Integration.Url",
+  "BigCommerce.AccessToken": "BigCommerce.Integration.AccessToken",
+  "WooCommerceApi.Url": "WooCommerce.Integration.Url",
+  "WooCommerceApi.AuthKey": "WooCommerce.Integration.AccessToken",
+
+  "OnBuyApi.Url": "OnBuy.Integration.Url",
+  "OnBuyApi.AccessToken": "OnBuy.Integration.AccessToken",
+  "BlueparkApi.Url": "Bluepark.Integration.Url",
+  "BlueparkApi.AccessToken": "Bluepark.Integration.AccessToken",
+  "EkmApi.Url": "Ekm.Integration.Url",
+  "EkmApi.AccessToken": "Ekm.Integration.AccessToken",
+
+  "SquareSpaceApi.Url": "SquareSpace.Integration.Url",
+  "SquareSpaceApi.AccessToken": "SquareSpace.Integration.AccessToken",
+  "WixApi.Url": "Wix.Integration.Url",
+  "WixApi.AccessToken": "Wix.Integration.AccessToken",
+  "CdiscountApi.Url": "Cdiscount.Integration.Url",
+  "CdiscountApi.AccessToken": "Cdiscount.Integration.AccessToken",
+
+  "FruugoApi.Url": "Fruugo.Integration.Url",
+  "FruugoApi.AccessToken": "Fruugo.Integration.AccessToken",
+  "VisualSoftApi.Url": "VisualSoft.Integration.Url",
+  "VisualSoftApi.AccessToken": "VisualSoft.Integration.AccessToken",
+  "EtsyApi.Url": "Etsy.Integration.Url",
+  "EtsyApi.AuthKey": "Etsy.Integration.AccessToken",
+  "EtsyApi.AppCode": "Etsy.Integration.AppCode"
 }

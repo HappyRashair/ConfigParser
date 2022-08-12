@@ -14,8 +14,11 @@
   "Amazon.DeveloperAccountNumber": [ "WEB" ],
   "Amazon.USDeveloperAccountNumber": [ "WEB" ],
   "Amazon.AUDeveloperAccountNumber": [ "WEB" ],
-  "Amazon.ApplicationName": [ "WEB", "API" ],
-  "Amazon.AccessToken": [ "MW", "API" ],
+  "Amazon.ApplicationName": [ "WEB" ],
+
+  "Amazon.Integration.Url": [ "MW", "API" ],
+  "Amazon.Integration.AccessToken": [ "MW", "API" ],
+  "Amazon.Integration.AppName": [ "MW", "API" ],
 
   "Amazon.Live.AccessKeyID.Europe": [ "MW", "API", "SS" ],
   "Amazon.Live.SecretKey.Europe": [ "MW", "API", "SS" ],
@@ -34,12 +37,15 @@
   "MiddlewareWebService.EndpointMode": [ "MW" ],
 
   // Only used there
-  "BigCommerce.Url": [ "WEB", "SS", "MW" ],
-  "BigCommerce.AccessToken": [ "WEB", "SS", "MW" ],
+  "BigCommerce.Integration.Url": [ "WEB", "SS", "MW" ],
+  "BigCommerce.Integration.AccessToken": [ "WEB", "SS", "MW" ],
   "BigCommerce.ExternalAuthUrl": [ "WEB" ],
   "BigCommerce.InternalAuthPath": [ "WEB" ],
   "BigCommerce.ClientId": [ "WEB" ],
   "BigCommerce.ClientSecret": [ "WEB" ],
+  "BigCommerce.LiveAppURL": [ "WEB" ],
+  "BigCommerce.DraftAppURL": [ "WEB" ],
+
   "AuthServer.ClientSecret": [ "WEB" ],
 
   "Dropbox.ClientID": [ "API" ],
@@ -92,6 +98,29 @@
   "OlpProxy.Url": [ "API", "MW", "SS" ],
   "OlpProxy.AccessToken": [ "API", "MW", "SS" ],
 
+  "OnBuy.Integration.Url": [ "API", "MW", "SS" ],
+  "OnBuy.Integration.AccessToken": [ "API", "MW", "SS" ],
+  "Bluepark.Integration.Url": [ "API", "MW", "SS" ],
+  "Bluepark.Integration.AccessToken": [ "API", "MW", "SS" ],
+  "Ekm.Integration.Url": [ "API", "MW", "SS" ],
+  "Ekm.Integration.AccessToken": [ "API", "MW", "SS" ],
+
+  "SquareSpace.Integration.Url": [ "API", "MW", "SS" ],
+  "SquareSpace.Integration.AccessToken": [ "API", "MW", "SS" ],
+  "Wix.Integration.Url": [ "API", "MW", "SS" ],
+  "Wix.Integration.AccessToken": [ "API", "MW", "SS" ],
+  "Cdiscount.Integration.Url": [ "API", "MW", "SS" ],
+  "Cdiscount.Integration.AccessToken": [ "API", "MW", "SS" ],
+
+
+  "Fruugo.Integration.Url": [ "API", "MW", "SS" ],
+  "Fruugo.Integration.AccessToken": [ "API", "MW", "SS" ],
+  "VisualSoft.Integration.Url": [ "API", "MW", "SS" ],
+  "VisualSoft.Integration.AccessToken": [ "API", "MW", "SS" ],
+  "Etsy.Integration.Url": [ "API", "MW", "SS" ],
+  "Etsy.Integration.AccessToken": [ "API", "MW", "SS" ],
+  "Etsy.Integration.AppCode": [ "API" ],
+
   // Various
   "FraudPreventionThresholdPercentage": [ "MW" ],
 
@@ -108,7 +137,7 @@
   "SpreadsheetImportSettings.MaxDaysToDownloadFile": [ "API" ],
   "DisableDeploymentNotifications": [ "API" ],
   "Stripe.AccessToken": [ "CS-API", "MW", "SS" ],
-  
+
   "AvailableSites": [ "WEB", "API" ],
   "Shipper.Suffix": [ "WEB", "API" ],
   "SFLite.Suffix": [ "WEB", "API" ],
@@ -123,7 +152,7 @@
   "AngularJS.Templates.Bundled": [ "WEB" ],
 
   "SupportSite.Mode": [ "SS" ],
-  "SupportSite.ShowBasicBarcodesTab":  ["SS"],
+  "SupportSite.ShowBasicBarcodesTab": [ "SS" ],
   "RoyalMail.COSS.WireNumber": [ "MW", "SS" ],
   "RoyalMail.COSS.ChannelIdentifier": [ "MW", "SS" ],
   "MiddlewareWebService.EndpointAddress": [ "API", "MW", "SS" ],
@@ -143,7 +172,6 @@
   "ClientDesktop.AccessToken": [ "API" ],
 
   // Integration-connect only
-  "EtsyAPI.AppCode": [ "API" ],
   "Shopify.ApplicationScopes": [ "API" ],
 
   // Debugging / asp.net stuff

@@ -25,6 +25,8 @@
   "EbayApi.Url": "Ebay.Integration.Url",
   "EbayApi.AccessToken": "Ebay.Integration.AccessToken",
   "EbayApi.Application": "Ebay.Integration.Application",
+  "Ebay.Sandbox.ApiUrl": "Ebay.Sandbox.Url",
+  "Ebay.Live.ApiUrl": "Ebay.Live.Url",
 
   "BigCommerce.Url": "BigCommerce.Integration.Url",
   "BigCommerce.AccessToken": "BigCommerce.Integration.AccessToken",
@@ -56,8 +58,12 @@
   "ShopifyApi.Url": "Shopify.Integration.Url",
   "ShopifyApi.AuthKey": "Shopify.Integration.AccessToken",
   "NotonthehighstreetApi.Url.IsSandbox": "Notonthehighstreet.IsSandbox",
+  "Notonthehighstreet.Sandbox.ApiUrl": "Notonthehighstreet.Sandbox.Url",
+  "Notonthehighstreet.Live.ApiUrl": "Notonthehighstreet.Live.Url",
 
+  "Dropbox.ApiUrl": "Dropbox.Url",
 
+  // Services
   "ShipmentApi.Url": "ObaService.Url",
   "ShipmentApi.BulkShipmentsPerRequest": "ObaService.BulkShipmentsPerRequest",
   "ShipmentApi.AccessToken.WEBAPI": "ObaService.AccessToken.WEBAPI",

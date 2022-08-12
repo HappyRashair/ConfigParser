@@ -112,7 +112,6 @@
   "Cdiscount.Integration.Url": [ "API", "MW", "SS" ],
   "Cdiscount.Integration.AccessToken": [ "API", "MW", "SS" ],
 
-
   "Fruugo.Integration.Url": [ "API", "MW", "SS" ],
   "Fruugo.Integration.AccessToken": [ "API", "MW", "SS" ],
   "VisualSoft.Integration.Url": [ "API", "MW", "SS" ],
@@ -120,6 +119,15 @@
   "Etsy.Integration.Url": [ "API", "MW", "SS" ],
   "Etsy.Integration.AccessToken": [ "API", "MW", "SS" ],
   "Etsy.Integration.AppCode": [ "API" ],
+
+  "Shopify.Integration.Url": [ "API", "MW", "SS" ],
+  "Shopify.Integration.AccessToken": [ "API", "MW", "SS" ],
+  "Shopify.ClientId": [ "API" ],
+  "Shopify.ClientSecret": [ "API" ],
+  "Shopify.ApplicationScopes": [ "API" ],
+  "Notonthehighstreet.IsSandbox": [ "SS" ],
+  "Notonthehighstreet.Sandbox.ApiUrl": [ "API", "MW", "SS" ],
+  "Notonthehighstreet.Live.ApiUrl": [ "API", "MW", "SS" ],
 
   // Various
   "FraudPreventionThresholdPercentage": [ "MW" ],
@@ -170,9 +178,6 @@
   "PaymentService.CallbackAuthToken": [ "API" ],
   "DocumentApiExternalAccess.AccessToken": [ "API" ],
   "ClientDesktop.AccessToken": [ "API" ],
-
-  // Integration-connect only
-  "Shopify.ApplicationScopes": [ "API" ],
 
   // Debugging / asp.net stuff
   "Debug.LazyLoading.QueryWarningLimit": null,

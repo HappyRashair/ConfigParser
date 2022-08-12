@@ -5,9 +5,9 @@
     <add key="RoyalMail.MobileApp.ExternalGateway.Url.UAT" value="https://royal-mail-mobile-app-external-gateway-uat.storefeeder.com" />
     <add key="RoyalMail.MobileApp.ExternalGateway.Url.LIVE" value="https://royal-mail-mobile-app-external-gateway.storefeeder.com" />
 
-    <add key="WixApi.Url" value="http://wix-integration.integrations.svc.cluster.local/api/v1"/>
-    <add key="CdiscountApi.Url" value="http://cdiscount-integration.integrations.svc.cluster.local/api"/>
-    <add key="FruugoApi.Url" value="http://fruugo-integration.integrations.svc.cluster.local/api"/>
+    <add key="Wix.Integration.Url" value="http://wix-integration.integrations.svc.cluster.local/api/v1"/>
+    <add key="Cdiscount.Integration.Url" value="http://cdiscount-integration.integrations.svc.cluster.local/api"/>
+    <add key="Fruugo.Integration.Url" value="http://fruugo-integration.integrations.svc.cluster.local/api"/>
    
   
   </appSettings>

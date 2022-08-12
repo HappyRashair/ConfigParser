@@ -1,7 +1,7 @@
 {
   // Config server discrepancies
-  "VisualSoft.Url": "VisualSoftApi.Url",
-  "VisualSoft.AccessToken": "VisualSoftApi.AccessToken",
+  "VisualSoft.Url": "VisualSoft.Integration.Url",
+  "VisualSoft.AccessToken": "VisualSoft.Integration.AccessToken",
   "Dropbox.TimeoutSecond": "Dropbox.TimeoutSeconds",
 
   // Bug AB#44994
@@ -51,5 +51,9 @@
   "VisualSoftApi.AccessToken": "VisualSoft.Integration.AccessToken",
   "EtsyApi.Url": "Etsy.Integration.Url",
   "EtsyApi.AuthKey": "Etsy.Integration.AccessToken",
-  "EtsyApi.AppCode": "Etsy.Integration.AppCode"
+  "EtsyApi.AppCode": "Etsy.Integration.AppCode",
+
+  "ShopifyApi.Url": "Shopify.Integration.Url",
+  "ShopifyApi.AuthKey": "Shopify.Integration.AccessToken",
+  "NotonthehighstreetApi.Url.IsSandbox": "Notonthehighstreet.IsSandbox",
 }

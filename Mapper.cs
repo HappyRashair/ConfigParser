@@ -49,16 +49,23 @@ namespace ConfigParser
 
             if (_mappings.TryGetValue($"{key}.Value", out var valueMappingStr))
             {
-                // We may want to replace the whole value or just a part of it
-                var mappedValue = IsReplaceRegex(valueMappingStr) ? ProcessRegex(value, valueMappingStr) : valueMappingStr;
-                if (mappedValue != value)
-                {
-                    WriteMapped(value, mappedValue, "value");
-                    value = mappedValue;
-                }
+                value = MapValue(value, valueMappingStr);
             }
 
             return (key, value);
+        }
+
+        private string MapValue(string value, string valueMappingStr)
+        {
+            // We may want to replace the whole value or just a part of it
+            var mappedValue = IsReplaceRegex(valueMappingStr) ? ProcessRegex(value, valueMappingStr) : valueMappingStr;
+            if (mappedValue != value)
+            {
+                WriteMapped(value, mappedValue, "value");
+                return mappedValue;
+            }
+
+            return value;
         }
 
         private static void WriteMapped(string key, string mappedKey, string what)

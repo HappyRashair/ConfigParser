@@ -56,4 +56,27 @@
   "ShopifyApi.Url": "Shopify.Integration.Url",
   "ShopifyApi.AuthKey": "Shopify.Integration.AccessToken",
   "NotonthehighstreetApi.Url.IsSandbox": "Notonthehighstreet.IsSandbox",
+
+
+  "ShipmentApi.Url": "ObaService.Url",
+  "ShipmentApi.BulkShipmentsPerRequest": "ObaService.BulkShipmentsPerRequest",
+  "ShipmentApi.AccessToken.WEBAPI": "ObaService.AccessToken.WEBAPI",
+  "ShipmentApi.AccessToken.SUPPORTSITE": "ObaService.AccessToken.SUPPORTSITE",
+  "ShipmentApi.AccessToken.DROPBOX": "ObaService.AccessToken.DROPBOX",
+
+  "OrdersApi.Url": "OrdersService.Url",
+  "OrdersApi.AccessToken": "OrdersService.AccessToken",
+  "SearchApi.Url": "MegaSearchService.Url",
+  "SearchApi.AccessToken": "MegaSearchService.AccessToken",
+  "TrackingDataApi.Url": "TrackingService.Url",
+  "TrackingDataApi.AccessToken": "TrackingService.AccessToken",
+  "DocumentServiceUrl": "DocumentService.Url",
+  "DocumentServiceAuthorizationToken": "DocumentService.AccessToken",
+
+  "ShipmentServiceApi.Url": "ShipmentService.Url",
+  "ShipmentServiceApi.V2Url": "ShipmentService.V2Url",
+  "ShipmentServiceApi.AccessToken": "ShipmentService.AccessToken",
+  "ShipmentServiceApi.CallbackAuthToken": "ShipmentService.CallbackAuthToken",
+
+  "MiddlewareWebService.EndpointAddress": "MiddlewareWebService.Url",
 }

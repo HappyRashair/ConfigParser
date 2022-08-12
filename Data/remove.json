@@ -104,5 +104,10 @@
   "VatPercentage",
   "ManifestRetryDelayMinutes",
   "Ebay.Live.SignInURL",
-  "Ebay.Sandbox.SignInURL"
+  "Ebay.Sandbox.SignInURL",
+
+  "LogReadOnlyContextExecutionInfo",
+  "ConsumerCollectionsGatewayApi.Url",
+  "ConsumerCollectionsGatewayApi.AccessToken",
+  "MiddlewareWebService.PublicEndpointAddress"
 ]

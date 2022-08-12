@@ -1,6 +1,6 @@
 {
   "Amazon.AUDeveloperAccountNumber": [ "WEB" ],
-  "Ebay.Sandbox.ApiURL": [ "SS", "API", "MW" ],
+  "Ebay.Sandbox.Url": [ "SS", "API", "MW" ],
   "Ebay.Sandbox.ShoppingApiUrl": [ "API" ],
   "SFlite.UserMessages.DefaultSender": [ "SS", "API", "MW" ],
   "ChannelShipper.UserMessages.DefaultSender": [ "SS", "API", "MW" ],

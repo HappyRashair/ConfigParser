@@ -57,7 +57,7 @@
   "Dropbox.GrantType": [ "API" ],
   "Dropbox.TokenUrl": [ "API" ],
   "Dropbox.TimeoutSeconds": [ "API" ],
-  "Dropbox.ApiUrl": [ "SS" ],
+  "Dropbox.Url": [ "SS" ],
 
 
   // Only used there
@@ -65,12 +65,12 @@
   "Ebay.Live.ShoppingApiURL": [ "API" ],
 
   "Ebay.Sandbox.RuName": [ "API", "MW", "SS" ],
-  "Ebay.Sandbox.ApiURL": [ "API", "MW", "SS" ],
+  "Ebay.Sandbox.Url": [ "API", "MW", "SS" ],
   "Ebay.Sandbox.DevID": [ "API", "MW", "SS" ],
   "Ebay.Sandbox.AppID": [ "API", "MW", "SS" ],
   "Ebay.Sandbox.CertID": [ "API", "MW", "SS" ],
   "Ebay.Live.RuName": [ "API", "MW", "SS" ],
-  "Ebay.Live.ApiURL": [ "API", "MW", "SS" ],
+  "Ebay.Live.Url": [ "API", "MW", "SS" ],
   "Ebay.Live.DevID": [ "API", "MW", "SS" ],
   "Ebay.Live.AppID": [ "API", "MW", "SS" ],
   "Ebay.Live.CertID": [ "API", "MW", "SS" ],
@@ -97,6 +97,10 @@
   "OLP.Live.ApplicationID": [ "API", "MW", "SS" ],
   "OlpProxy.Url": [ "API", "MW", "SS" ],
   "OlpProxy.AccessToken": [ "API", "MW", "SS" ],
+
+  "Ebay.Integration.Url": [ "API", "MW", "SS" ],
+  "Ebay.Integration.AccessToken": [ "API", "MW", "SS" ],
+  "Ebay.Integration.Application": [ "API", "MW", "SS" ],
 
   "OnBuy.Integration.Url": [ "API", "MW", "SS" ],
   "OnBuy.Integration.AccessToken": [ "API", "MW", "SS" ],
@@ -126,8 +130,17 @@
   "Shopify.ClientSecret": [ "API" ],
   "Shopify.ApplicationScopes": [ "API" ],
   "Notonthehighstreet.IsSandbox": [ "SS" ],
-  "Notonthehighstreet.Sandbox.ApiUrl": [ "API", "MW", "SS" ],
-  "Notonthehighstreet.Live.ApiUrl": [ "API", "MW", "SS" ],
+  "Notonthehighstreet.Sandbox.Url": [ "API", "MW", "SS" ],
+  "Notonthehighstreet.Live.Url": [ "API", "MW", "SS" ],
+
+  "ObaService.AccessToken.WEBAPI": [ "API", "MW", "WEB" ],
+  "ObaService.AccessToken.SUPPORTSITE": [ "SS" ],
+  "ObaService.AccessToken.DROPBOX": [ "DESKTOP" ],
+
+  "TrackingService.Url": [ "API" ],
+  "TrackingService.AccessToken": [ "API" ],
+  "DocumentService.Url": [ "API", "DESKTOP" ],
+  "DocumentService.AccessToken": [ "API", "DESKTOP" ],
 
   // Various
   "FraudPreventionThresholdPercentage": [ "MW" ],
@@ -163,7 +176,7 @@
   "SupportSite.ShowBasicBarcodesTab": [ "SS" ],
   "RoyalMail.COSS.WireNumber": [ "MW", "SS" ],
   "RoyalMail.COSS.ChannelIdentifier": [ "MW", "SS" ],
-  "MiddlewareWebService.EndpointAddress": [ "API", "MW", "SS" ],
+  "MiddlewareWebService.Url": [ "API", "MW", "SS" ],
 
 
   // Tech

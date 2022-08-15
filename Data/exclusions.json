@@ -9,6 +9,7 @@
   "ChannelShipper.CsUserActivityRefreshTimeSpanMin": null,
   "ReadScaleOut.AutoDisable.TimeoutsLimit": null,
   "MaintenanceModeSleepMinutues": null,
+  "ObaService.BulkShipmentsPerRequest": null,
 
   // Only keep for {env}
   "Amazon.DeveloperAccountNumber": [ "WEB" ],
@@ -133,6 +134,8 @@
   "Notonthehighstreet.Sandbox.Url": [ "API", "MW", "SS" ],
   "Notonthehighstreet.Live.Url": [ "API", "MW", "SS" ],
 
+  "WooCommerce.Integration.Url": [ "API", "MW", "SS", "WEB" ],
+  "WooCommerce.Integration.AccessToken": [ "API", "MW", "SS", "WEB" ],
   // Services
 
   "ObaService.AccessToken.WEBAPI": [ "API", "MW", "WEB" ],

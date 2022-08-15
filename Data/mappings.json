@@ -109,11 +109,13 @@
   "SFLite.Suffix": "ClickAndDrop.Suffix",
   "SFLite.AuthServer.Url": "ClickAndDrop.AuthServer.Url",
   "SFLite.ZendeskApi.Url": "ClickAndDrop.ZendeskApi.Url",
+  "SFlite.UserMessages.DefaultSender": "ClickAndDrop.UserMessages.DefaultSender",
   "SFliteApi.Url": "ClickAndDrop.Api.Url",
 
   "Shipper.Url": "ChannelShipper.Url",
   "Shipper.Suffix": "ChannelShipper.Suffix",
   "Shipper.AuthServer.Url": "ChannelShipper.AuthServer.Url",
   "Shipper.ZendeskApi.Url": "ChannelShipper.ZendeskApi.Url",
+  "Shipper.UserMessages.DefaultSender": "ChannelShipper.UserMessages.DefaultSender",
   "ShipperApi.Url": "ChannelShipper.Api.Url"
 }

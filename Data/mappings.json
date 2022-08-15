@@ -104,8 +104,16 @@
 
   // Sflite / Shipper
   "AvailableSites.Value": "ClickAndDrop,ChannelShipper",
+  "Sflite.Mode": "Website.Mode",
   "SFLite.Url": "ClickAndDrop.Url",
   "SFLite.Suffix": "ClickAndDrop.Suffix",
   "SFLite.AuthServer.Url": "ClickAndDrop.AuthServer.Url",
-  "SFLite.ZendeskApi.Url": "ClickAndDrop.ZendeskApi.Url"
+  "SFLite.ZendeskApi.Url": "ClickAndDrop.ZendeskApi.Url",
+  "SFliteApi.Url": "ClickAndDrop.Api.Url",
+
+  "Shipper.Url": "ChannelShipper.Url",
+  "Shipper.Suffix": "ChannelShipper.Suffix",
+  "Shipper.AuthServer.Url": "ChannelShipper.AuthServer.Url",
+  "Shipper.ZendeskApi.Url": "ChannelShipper.ZendeskApi.Url",
+  "ShipperApi.Url": "ChannelShipper.Api.Url"
 }

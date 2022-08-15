@@ -30,9 +30,9 @@
   "RoyalMail.MobileApp.ExternalGateway.AccessToken": [ "SS" ],
   "EnterpriseReporting.PrivateKeyPassPhrase": [ "MW" ],
   "ChannelShipper.StatusPage.Url": [ "CS" ],
-  "Shipper.ZendeskApi.Url": [ "CS-API" ],
+  "ChannelShipper.ZendeskApi.Url": [ "CS-API" ],
   "ClickAndDrop.ZendeskApi.Url": [ "CND-API" ],
-  "ShipperAPI.Url": [ "SS" ],
+  "ChannelShipper.Api.Url": [ "SS" ],
   "ConnectionStrings:Reporting": [ "SS" ],
   "MiddlewareWebService.EndpointMode": [ "MW" ],
 

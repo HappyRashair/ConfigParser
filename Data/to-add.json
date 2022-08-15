@@ -6,7 +6,7 @@
   "ChannelShipper.UserMessages.DefaultSender": [ "SS", "API", "MW" ],
   "ChannelShipper.StatusPage.Url": [ "CS" ],
   "ClickAndDrop.ZendeskApi.Url": [ "CND-API" ],
-  "Shipper.ZendeskApi.Url": [ "CS-API" ],
+  "ChannelShipper.ZendeskApi.Url": [ "CS-API" ],
   "ZendeskApi.Username": [ "API" ],
   "ZendeskApi.Password": [ "API" ],
   "Slack.DisableReadScaleOut.WebhookUrl": [ "SS", "API", "MW", "DESKTOP" ],

@@ -82,7 +82,7 @@
   "ShipmentServiceApi.Url": "ShipmentService.Url",
   "ShipmentServiceApi.V2Url": "ShipmentService.V2Url",
   "ShipmentServiceApi.AccessToken": "ShipmentService.AccessToken",
-  "ShipmentServiceApi.CallbackAuthToken": "ShipmentService.CallbackAuthToken",
+  "ShipmentServiceApi.CallbackAuthToken": "ShipmentService.Callback.AccessToken",
 
   "MiddlewareWebService.EndpointAddress": "MiddlewareWebService.Url",
   "MiddlewareWebService.PublicEndpointAddress": "MiddlewareWebService.PublicUrl",
@@ -91,5 +91,14 @@
   "PayPal.Sandbox.APIEndpoint": "PayPal.Sandbox.Url",
   "PayPal.Live.APIEndpoint": "PayPal.Live.Url",
 
-  "Amazon.ApplicationName": "Amazon.AppName"
+  "Amazon.ApplicationName": "Amazon.AppName",
+
+  // tokens
+  "PaymentService.AuthToken": "PaymentService.AccessToken",
+  "NotificationService.AuthorizationToken": "NotificationService.AccessToken",
+
+  // Callbacks
+  "PaymentService.CallbackAuthToken": "PaymentService.Callback.AccessToken",
+  "PaymentService.CallbackBaseUrl": "PaymentService.Callback.BaseUrl",
+  "OrderService.CallbackAuthToken": "OrderService.Callback.AccessToken",
 }

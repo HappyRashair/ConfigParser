@@ -133,6 +133,8 @@
   "Notonthehighstreet.Sandbox.Url": [ "API", "MW", "SS" ],
   "Notonthehighstreet.Live.Url": [ "API", "MW", "SS" ],
 
+  // Services
+
   "ObaService.AccessToken.WEBAPI": [ "API", "MW", "WEB" ],
   "ObaService.AccessToken.SUPPORTSITE": [ "SS" ],
   "ObaService.AccessToken.DROPBOX": [ "DESKTOP" ],
@@ -141,6 +143,12 @@
   "TrackingService.AccessToken": [ "API" ],
   "DocumentService.Url": [ "API", "DESKTOP" ],
   "DocumentService.AccessToken": [ "API", "DESKTOP" ],
+
+  "MegaSearchService.Url": [ "API" ],
+  "MegaSearchService.AccessToken": [ "API" ],
+
+  "PublicApi.Url": [ "API", "WEB" ],
+  "PublicApi.AccessToken": [ "API", "WEB" ],
 
   // Various
   "FraudPreventionThresholdPercentage": [ "MW" ],
@@ -153,7 +161,6 @@
   "PrintNode.RootAccountApiKey": [ "API", "DESKTOP" ],
 
   "OLP.RetryInvalidPrices": [ "API" ],
-  "PaymentService.CallbackBaseUrl": [ "API" ],
   "UserMessages.MessagesTimeFrameInDays": [ "API" ],
   "SpreadsheetImportSettings.MaxDaysToDownloadFile": [ "API" ],
   "DisableDeploymentNotifications": [ "API" ],
@@ -190,7 +197,10 @@
 
   // API auth only
   "OlpApiExternalAccess.AccessToken": [ "API" ],
-  "PaymentService.CallbackAuthToken": [ "API" ],
+  "PaymentService.Callback.AccessToken": [ "API" ],
+  "PaymentService.Callback.BaseUrl": [ "API" ],
+  "OrderService.Callback.AccessToken": [ "API" ],
+  "ShipmentService.Callback.AccessToken": [ "API" ],
   "DocumentApiExternalAccess.AccessToken": [ "API" ],
   "ClientDesktop.AccessToken": [ "API" ],
 

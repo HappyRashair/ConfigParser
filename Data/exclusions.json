@@ -37,14 +37,14 @@
   "MiddlewareWebService.EndpointMode": [ "MW" ],
 
   // Only used there
-  "BigCommerce.Integration.Url": [ "WEB", "SS", "MW" ],
-  "BigCommerce.Integration.AccessToken": [ "WEB", "SS", "MW" ],
-  "BigCommerce.ExternalAuthUrl": [ "WEB" ],
-  "BigCommerce.InternalAuthPath": [ "WEB" ],
-  "BigCommerce.ClientId": [ "WEB" ],
-  "BigCommerce.ClientSecret": [ "WEB" ],
-  "BigCommerce.LiveAppURL": [ "WEB" ],
-  "BigCommerce.DraftAppURL": [ "WEB" ],
+  "BigCommerce.Integration.Url": [ "CND", "SS", "MW" ],
+  "BigCommerce.Integration.AccessToken": [ "CND", "SS", "MW" ],
+  "BigCommerce.ExternalAuthUrl": [ "CND" ],
+  "BigCommerce.InternalAuthPath": [ "CND" ],
+  "BigCommerce.ClientId": [ "CND" ],
+  "BigCommerce.ClientSecret": [ "CND" ],
+  "BigCommerce.LiveAppURL": [ "CND" ],
+  "BigCommerce.DraftAppURL": [ "CND" ],
 
   "AuthServer.ClientSecret": [ "WEB" ],
 

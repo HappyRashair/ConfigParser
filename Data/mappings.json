@@ -24,7 +24,7 @@
   "Amazon.AppName": "Amazon.Integration.AppName",
   "EbayApi.Url": "Ebay.Integration.Url",
   "EbayApi.AccessToken": "Ebay.Integration.AccessToken",
-  "EbayApi.Application": "Ebay.Integration.Application",
+  "EbayApi.Application": "Ebay.Integration.AppName",
   "Ebay.Sandbox.ApiUrl": "Ebay.Sandbox.Url",
   "Ebay.Live.ApiUrl": "Ebay.Live.Url",
 
@@ -53,7 +53,7 @@
   "VisualSoftApi.AccessToken": "VisualSoft.Integration.AccessToken",
   "EtsyApi.Url": "Etsy.Integration.Url",
   "EtsyApi.AuthKey": "Etsy.Integration.AccessToken",
-  "EtsyApi.AppCode": "Etsy.Integration.AppCode",
+  "EtsyApi.AppCode": "Etsy.Integration.AppName",
 
   "ShopifyApi.Url": "Shopify.Integration.Url",
   "ShopifyApi.AuthKey": "Shopify.Integration.AccessToken",
@@ -86,5 +86,10 @@
 
   "MiddlewareWebService.EndpointAddress": "MiddlewareWebService.Url",
   "MiddlewareWebService.PublicEndpointAddress": "MiddlewareWebService.PublicUrl",
-  "MiddlewareWebService.EndpointMode": "MiddlewareWebService.Mode"
+  "MiddlewareWebService.EndpointMode": "MiddlewareWebService.Mode",
+
+  "PayPal.Sandbox.APIEndpoint": "PayPal.Sandbox.Url",
+  "PayPal.Live.APIEndpoint": "PayPal.Live.Url",
+
+  "Amazon.ApplicationName": "Amazon.AppName"
 }

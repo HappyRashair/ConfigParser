@@ -14,7 +14,7 @@
   "Amazon.DeveloperAccountNumber": [ "WEB" ],
   "Amazon.USDeveloperAccountNumber": [ "WEB" ],
   "Amazon.AUDeveloperAccountNumber": [ "WEB" ],
-  "Amazon.ApplicationName": [ "WEB" ],
+  "Amazon.AppName": [ "WEB" ],
 
   "Amazon.Integration.Url": [ "MW", "API" ],
   "Amazon.Integration.AccessToken": [ "MW", "API" ],
@@ -64,12 +64,12 @@
   "Ebay.Sandbox.ShoppingApiURL": [ "API" ],
   "Ebay.Live.ShoppingApiURL": [ "API" ],
 
-  "Ebay.Sandbox.RuName": [ "API", "MW", "SS" ],
+  "Ebay.Sandbox.RuName": [ "API" ],
   "Ebay.Sandbox.Url": [ "API", "MW", "SS" ],
   "Ebay.Sandbox.DevID": [ "API", "MW", "SS" ],
   "Ebay.Sandbox.AppID": [ "API", "MW", "SS" ],
   "Ebay.Sandbox.CertID": [ "API", "MW", "SS" ],
-  "Ebay.Live.RuName": [ "API", "MW", "SS" ],
+  "Ebay.Live.RuName": [ "API" ],
   "Ebay.Live.Url": [ "API", "MW", "SS" ],
   "Ebay.Live.DevID": [ "API", "MW", "SS" ],
   "Ebay.Live.AppID": [ "API", "MW", "SS" ],
@@ -83,10 +83,10 @@
   "PayPal.Sandbox.WebExperienceProfileID": [ "API" ],
   "PayPal.Live.WebExperienceProfileID": [ "API" ],
 
-  "PayPal.Sandbox.APIEndpoint": [ "API", "MW", "SS" ],
+  "PayPal.Sandbox.Url": [ "API", "MW", "SS" ],
   "PayPal.Sandbox.ClientID": [ "API", "MW", "SS" ],
   "PayPal.Sandbox.ClientSecret": [ "API", "MW", "SS" ],
-  "PayPal.Live.APIEndpoint": [ "API", "MW", "SS" ],
+  "PayPal.Live.Url": [ "API", "MW", "SS" ],
   "PayPal.Live.ClientID": [ "API", "MW", "SS" ],
   "PayPal.Live.ClientSecret": [ "API", "MW", "SS" ],
 
@@ -100,7 +100,7 @@
 
   "Ebay.Integration.Url": [ "API", "MW", "SS" ],
   "Ebay.Integration.AccessToken": [ "API", "MW", "SS" ],
-  "Ebay.Integration.Application": [ "API", "MW", "SS" ],
+  "Ebay.Integration.AppName": [ "API", "MW", "SS" ],
 
   "OnBuy.Integration.Url": [ "API", "MW", "SS" ],
   "OnBuy.Integration.AccessToken": [ "API", "MW", "SS" ],
@@ -122,7 +122,7 @@
   "VisualSoft.Integration.AccessToken": [ "API", "MW", "SS" ],
   "Etsy.Integration.Url": [ "API", "MW", "SS" ],
   "Etsy.Integration.AccessToken": [ "API", "MW", "SS" ],
-  "Etsy.Integration.AppCode": [ "API" ],
+  "Etsy.Integration.AppName": [ "API" ],
 
   "Shopify.Integration.Url": [ "API", "MW", "SS" ],
   "Shopify.Integration.AccessToken": [ "API", "MW", "SS" ],
@@ -178,7 +178,7 @@
   "RoyalMail.COSS.ChannelIdentifier": [ "MW", "SS" ],
   "MiddlewareWebService.Url": [ "API", "MW", "SS" ],
   "MiddlewareWebService.PublicUrl": [ "SS" ],
-  "MiddlewareWebService.Mode": ["MW"],
+  "MiddlewareWebService.Mode": [ "MW" ],
 
 
   // Tech

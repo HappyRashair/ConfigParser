@@ -15,7 +15,7 @@ namespace ConfigParser
         private readonly bool _verboseLogging;
 
         public ConfigProcessor(string targetEnv = "DEV",
-            string targetApp = "MW",
+            string targetApp = "SS",
             bool verboseLogging = true)
         {
             _targetEnv = targetEnv;

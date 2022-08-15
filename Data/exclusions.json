@@ -31,7 +31,7 @@
   "EnterpriseReporting.PrivateKeyPassPhrase": [ "MW" ],
   "ChannelShipper.StatusPage.Url": [ "CS" ],
   "Shipper.ZendeskApi.Url": [ "CS-API" ],
-  "Sflite.ZendeskApi.Url": [ "CND-API" ],
+  "ClickAndDrop.ZendeskApi.Url": [ "CND-API" ],
   "ShipperAPI.Url": [ "SS" ],
   "ConnectionStrings:Reporting": [ "SS" ],
   "MiddlewareWebService.EndpointMode": [ "MW" ],
@@ -167,8 +167,8 @@
   "Stripe.AccessToken": [ "CS-API", "MW", "SS" ],
 
   "AvailableSites": [ "WEB", "API" ],
-  "Shipper.Suffix": [ "WEB", "API" ],
-  "SFLite.Suffix": [ "WEB", "API" ],
+  "ChannelShipper.Suffix": [ "WEB", "API" ],
+  "ClickAndDrop.Suffix": [ "WEB", "API" ],
   "CookieSuffix": [ "WEB", "API" ],
 
   "Tealium.Account": [ "WEB" ],

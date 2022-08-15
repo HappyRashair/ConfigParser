@@ -101,4 +101,11 @@
   "PaymentService.CallbackAuthToken": "PaymentService.Callback.AccessToken",
   "PaymentService.CallbackBaseUrl": "PaymentService.Callback.BaseUrl",
   "OrderService.CallbackAuthToken": "OrderService.Callback.AccessToken",
+
+  // Sflite / Shipper
+  "AvailableSites.Value": "ClickAndDrop,ChannelShipper",
+  "SFLite.Url": "ClickAndDrop.Url",
+  "SFLite.Suffix": "ClickAndDrop.Suffix",
+  "SFLite.AuthServer.Url": "ClickAndDrop.AuthServer.Url",
+  "SFLite.ZendeskApi.Url": "ClickAndDrop.ZendeskApi.Url"
 }

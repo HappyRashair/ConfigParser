@@ -12,7 +12,7 @@ namespace ConfigParser
         private readonly static string TwiceIndent = new string(' ', 8);
         private readonly static string ThriceIndent = new string(' ', 12);
 
-        public static void WriteCyan(string message, bool shouldLog = false)
+        public static void WriteCyan(string message, bool shouldLog = true)
         {
             if(!shouldLog)
             {
@@ -24,7 +24,7 @@ namespace ConfigParser
             Console.ResetColor();
         }
 
-        public static void WriteGreen(string message, bool shouldLog = false)
+        public static void WriteGreen(string message, bool shouldLog = true)
         {
             if (!shouldLog)
             {
@@ -37,7 +37,7 @@ namespace ConfigParser
         }
 
 
-        public static void WriteRed(string message, bool shouldLog = false)
+        public static void WriteRed(string message, bool shouldLog = true)
         {
             if (!shouldLog)
             {
